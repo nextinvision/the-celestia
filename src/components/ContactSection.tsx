@@ -3,7 +3,11 @@ import tarotCards from "@/assets/tarot-cards.jpg";
 import bg3 from "@/assets/bg3.png";
 const ContactSection = () => {
   return (
-    <section id="contacts" className="py-20 relative overflow-hidden min-h-screen flex items-center">
+    <section 
+      id="contacts" 
+      className="py-20 relative overflow-hidden min-h-screen flex items-center"
+      style={{ backgroundColor: "#FFF4E1" }}
+    >
       {/* <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
