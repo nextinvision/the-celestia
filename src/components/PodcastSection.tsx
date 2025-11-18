@@ -1,4 +1,5 @@
 import { useState } from "react";
+import vectorImage from "@/assets/Vector.png";
 
 const PodcastSection = () => {
   // YouTube video ID from: https://youtu.be/OCcDjCff1j4?si=e81qvEiuDfilV6bq
@@ -23,11 +24,23 @@ const PodcastSection = () => {
   return (
     <section
       id="podcast"
-      className="bg-[#FFF4E1] min-h-auto md:max-h-[70vh] md:min-h-[70vh] relative overflow-hidden flex items-center py-12 md:py-0"
+      className="bg-[#FFF4E1] min-h-auto md:max-h-[85vh] md:min-h-[85vh] relative overflow-hidden flex items-center py-12 md:py-0"
       style={{
         backgroundColor: "#FFF4E1",
       }}
     >
+      {/* Vector Background Image */}
+      <div
+        className="absolute inset-0 pointer-events-none z-0"
+        style={{
+          backgroundImage: `url(${vectorImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          opacity: 1,
+        }}
+      ></div>
+
       {/* Background decorative elements */}
       <div
         className="absolute inset-0 opacity-5"
@@ -37,69 +50,13 @@ const PodcastSection = () => {
         }}
       ></div>
 
-      {/* Decorative Border - Top and Left */}
-      <div
-        className="absolute pointer-events-none"
-        style={{
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          zIndex: 1,
-        }}
-      >
-        {/* Top border line */}
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "4px",
-            backgroundColor: "#B48B80",
-          }}
-        />
-        {/* Left border line */}
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "4px",
-            height: "100%",
-            backgroundColor: "#B48B80",
-          }}
-        />
-        {/* Top-left corner decorative curve */}
-        <svg
-          width="80"
-          height="80"
-          viewBox="0 0 80 80"
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            transform: "translate(0, 0)",
-          }}
-        >
-          <path
-            d="M0,0 L0,20 Q0,40 20,40 L40,40"
-            fill="none"
-            stroke="#B48B80"
-            strokeWidth="4"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </div>
-
       {/* Content Layer */}
       <div className="container mx-auto px-4 sm:px-6 md:px-20 relative z-20 w-full py-4">
         <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
           {/* Left - Description */}
           <div className="relative flex flex-col justify-center space-y-2 md:space-y-3 order-2 md:order-1">
             {/* Section Label */}
-            <div className="mb-1">
+            <div className="mb-1 pt-8 md:pt-12">
               <span className="inline-block text-xs sm:text-sm font-semibold text-[#A37F76] uppercase tracking-wider">
                 Explore Our Podcast
               </span>
@@ -109,7 +66,7 @@ const PodcastSection = () => {
             <h2 className="font-serif text-[24px] sm:text-[28px] md:text-[32px] font-bold text-[#3A1D0F] leading-tight mb-2 text-center md:text-left">
               <span className="text-shimmer-white">Tarot Wisdom</span>
               <br />
-              <span className="text-[#A37F76] font-waterfall text-[32px] sm:text-[36px] md:text-[40px] lg:text-[48px]">
+              <span className="text-[#FFD700] font-waterfall text-[32px] sm:text-[36px] md:text-[40px] lg:text-[48px]">
                 Unveiled
               </span>
             </h2>
@@ -132,8 +89,23 @@ const PodcastSection = () => {
               </p>
 
               <div className="pt-2">
-                <div className="w-full md:w-fit bg-[#a37f76ad] backdrop-blur-sm rounded-lg border-shimmer bg-shimmer-white p-2 md:p-3">
-                  <span className="font-waterfall text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-[800] text-[#3A1D0F] block text-center md:text-left">
+                <div 
+                  className="w-full md:w-fit bg-[#a37f76ad] backdrop-blur-sm rounded-lg bg-shimmer-white p-2 md:p-3"
+                  style={{
+                    border: "1px solid rgba(255, 215, 0, 0.6)",
+                    boxShadow: "0 0 5px rgba(255, 215, 0, 0.3)"
+                  }}
+                >
+                  <span 
+                    className="font-waterfall text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-[800] block text-center md:text-left"
+                    style={{ 
+                      color: "#FFFFFF",
+                      textShadow: "none",
+                      WebkitTextFillColor: "#FFFFFF",
+                      background: "none",
+                      backgroundImage: "none"
+                    }}
+                  >
                     "The cards reveal what the heart already knows."
                   </span>
                 </div>

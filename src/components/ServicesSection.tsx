@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Carousel,
   CarouselContent,
@@ -45,6 +46,7 @@ const services = [
 ];
 
 const ServicesSection = () => {
+  const navigate = useNavigate();
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
@@ -71,30 +73,8 @@ const ServicesSection = () => {
     };
   }, [api]);
 
-  // Calculate which 3 services to show based on current slide
-  // The carousel shows 3 services at a time
-  const getVisibleServices = () => {
-    // Determine which group of 3 is currently visible
-    // Group 0: services 0-2 (Tarot, Numerology, Sound Healing)
-    // Group 1: services 3-5 (Reiki, Intuitive, Crystal)
-    
-    // If current slide is 0, 1, or 2, we're showing the first group
-    // If current slide is 3, 4, or 5, we're showing the second group
-    let startIndex: number;
-    
-    if (current < 3) {
-      startIndex = 0; // First group
-    } else {
-      startIndex = 3; // Second group
-    }
-    
-    return services.slice(startIndex, startIndex + 3);
-  };
-
-  const visibleServices = getVisibleServices();
-  
-  // Force re-render when current changes by using it in the key
-  const serviceListKey = `services-${Math.floor(current / 3)}`;
+  // Get the currently selected service
+  const currentService = services[current];
 
   return (
     <section id="services" className="w-full bg-[#FFF4E1] py-12 md:py-20 relative overflow-hidden">
@@ -173,6 +153,11 @@ const ServicesSection = () => {
                               borderRadius: "16px",
                               boxShadow: "0 4px 15px rgba(180, 139, 128, 0.3), 0 0 20px rgba(180, 139, 128, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2)",
                             }}
+                            onClick={() => {
+                              if (service.name === "Sound Healing") {
+                                navigate("/sound-healing");
+                              }
+                            }}
                             onMouseEnter={(e) => {
                               e.currentTarget.style.boxShadow = "0 6px 20px rgba(180, 139, 128, 0.5), 0 0 30px rgba(180, 139, 128, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)";
                               e.currentTarget.style.transform = "translateY(-2px)";
@@ -200,28 +185,32 @@ const ServicesSection = () => {
           </div>
 
           {/* Right panel */}
-          <aside className="bg-[#f3e7dd] rounded-md p-6 sm:p-8 flex flex-col items-center text-center justify-center border-shimmer">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-[#3A1D0F] text-shimmer-white">
+          <aside className="rounded-md p-6 sm:p-8 flex flex-col items-center text-center justify-center border-shimmer" style={{ backgroundColor: "rgba(163, 127, 118, 0.7)" }}>
+            <h3 
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif golden-glow-text" 
+              style={{ 
+                color: "#FFD700"
+              }}
+            >
               MY SERVICES
             </h3>
-            <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl italic text-[#A37F76] mt-1 font-waterfall">
+            <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl italic text-white mt-1 font-waterfall">
               and offers
             </p>
 
-            <nav className="mt-4 sm:mt-6 flex flex-col gap-3 sm:gap-4 w-full relative min-h-[100px] sm:min-h-[120px]">
-              <div 
-                key={serviceListKey} 
-                className="service-list-fade flex flex-col gap-4 w-full"
-              >
-                {visibleServices.map((service, i) => (
+            <nav className="mt-4 sm:mt-6 flex flex-col gap-3 sm:gap-4 w-full relative min-h-[100px] sm:min-h-[120px] overflow-hidden">
+              <div className="service-wheel-container">
+                <div 
+                  key={current} 
+                  className="service-reveal"
+                >
                   <a
-                    key={`${current}-${i}`}
                     href="#"
-                    className="text-base sm:text-lg md:text-xl underline underline-offset-4 font-medium text-[#3A1D0F] hover:text-[#A37F76] transition-colors"
+                    className="text-base sm:text-lg md:text-xl underline underline-offset-4 font-medium text-white hover:text-[#FFD700] transition-colors block"
                   >
-                    {service.name.toUpperCase()}
+                    {currentService?.name.toUpperCase()}
                   </a>
-                ))}
+                </div>
               </div>
             </nav>
 
@@ -311,6 +300,19 @@ const ServicesSection = () => {
           }
         }
         
+        @keyframes golden-glow-pulse {
+          0%, 100% {
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.5), 0 0 15px rgba(255, 215, 0, 0.4), 0 0 25px rgba(255, 215, 0, 0.3);
+          }
+          50% {
+            text-shadow: 0 0 12px rgba(255, 215, 0, 0.9), 0 0 25px rgba(255, 215, 0, 0.7), 0 0 40px rgba(255, 215, 0, 0.5);
+          }
+        }
+        
+        .golden-glow-text {
+          animation: golden-glow-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
         .golden-button {
           box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3), 
                       0 0 20px rgba(255, 215, 0, 0.2),
@@ -325,16 +327,25 @@ const ServicesSection = () => {
           transform: translateY(-2px);
         }
         
-        .service-list-fade {
-          animation: fadeInService 0.6s ease-in-out;
+        .service-wheel-container {
+          position: relative;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
         
-        @keyframes fadeInService {
-          from {
+        .service-reveal {
+          position: relative;
+          animation: serviceWheelUp 0.6s ease-out forwards;
+        }
+        
+        @keyframes serviceWheelUp {
+          0% {
             opacity: 0;
-            transform: translateY(10px);
+            transform: translateY(100%);
           }
-          to {
+          100% {
             opacity: 1;
             transform: translateY(0);
           }

@@ -40,7 +40,7 @@ const Navigation = () => {
                 About
               </button>
               <button
-                onClick={() => scrollToSection("projects")}
+                onClick={() => scrollToSection("services")}
                 className="glow-shimmer hover:text-[#A37F76] transition-colors"
               >
                 Services

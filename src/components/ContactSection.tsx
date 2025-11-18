@@ -1,23 +1,24 @@
 import { Instagram, Linkedin, Mail } from "lucide-react";
 import tarotCards from "@/assets/tarot-cards.jpg";
 import bg3 from "@/assets/bg3.png";
-import vectorImage from "@/assets/Vector.png";
+import vectorImage from "@/assets/Vector2.png";
 const ContactSection = () => {
   return (
     <section 
       id="contacts" 
-      className="py-12 sm:py-16 md:py-20 relative overflow-hidden min-h-auto md:min-h-screen flex items-center"
+      className="py-8 sm:py-12 md:py-24 relative overflow-hidden min-h-auto md:min-h-[110vh] flex items-center"
       style={{ backgroundColor: "#FFF4E1" }}
     >
       {/* Vector Background Image */}
       <div
-        className="absolute inset-0 pointer-events-none z-0"
+        className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage: `url(${vectorImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundSize: "100% auto",
+          backgroundPosition: "center bottom",
           backgroundRepeat: "no-repeat",
           opacity: 1,
+          zIndex: 20,
         }}
       ></div>
 
@@ -28,12 +29,12 @@ const ContactSection = () => {
         }}
       ></div> */}
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+      <div className="container mx-auto px-4 sm:px-6 relative">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-16 items-start md:items-center">
           {/* Left - Contact Info */}
-          <div className="space-y-8 sm:space-y-10 md:space-y-12 order-2 md:order-1">
+          <div className="space-y-6 sm:space-y-8 md:space-y-12 order-2 md:order-1" style={{ position: "relative", zIndex: 50 }}>
             <div className="space-y-4 sm:space-y-6">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-script text-foreground text-shimmer text-center md:text-left">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-script text-foreground text-shimmer text-right md:text-left">
                 Connect With Me
               </h2>
               
@@ -94,19 +95,21 @@ const ContactSection = () => {
               </a>
             </div>
 
-            <p className="text-xs sm:text-sm pt-6 sm:pt-8 font-bold text-center md:text-left" style={{ color: "#FFF4E1" }}>
+            <p className="text-xs sm:text-sm pt-6 sm:pt-8 font-bold text-center md:text-left text-foreground">
               Righttsign © 2025 - 2026
             </p>
           </div>
 
           {/* Right - Tarot Cards Image */}
-          <div className="relative flex justify-center md:justify-end order-1 md:order-2">
-            <div className="rounded-2xl sm:rounded-3xl overflow-hidden w-full max-w-full sm:max-w-md shadow-2xl golden-border-solid p-2">
-              <img 
-                src={tarotCards}
-                alt="Tarot Cards and Oracle Deck"
-                className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover rounded-2xl sm:rounded-3xl"
-              />
+          <div className="relative flex justify-center md:justify-end items-start order-1 md:order-2 mt-0 md:-mt-[60px]" style={{ zIndex: 1, position: "relative" }}>
+            <div className="md:-translate-x-[50px]">
+              <div className="rounded-2xl sm:rounded-3xl overflow-hidden w-full max-w-full sm:max-w-md shadow-2xl golden-border-solid p-2" style={{ position: "relative", zIndex: 1 }}>
+                <img 
+                  src={tarotCards}
+                  alt="Tarot Cards and Oracle Deck"
+                  className="w-full h-[250px] sm:h-[350px] md:h-[500px] lg:h-[600px] object-cover rounded-2xl sm:rounded-3xl"
+                />
+              </div>
             </div>
 
             {/* Decorative bird element */}
@@ -119,8 +122,8 @@ const ContactSection = () => {
         </div>
       </div>
 
-      {/* Bottom decorative leaves */}
-      <div className="absolute bottom-0 right-0 opacity-10">
+      {/* Bottom decorative leaves - Mirrored */}
+      <div className="absolute bottom-0 right-0 opacity-10" style={{ transform: "scaleX(-1)" }}>
         <svg width="200" height="150" viewBox="0 0 200 150" fill="none">
           <path d="M100 10C100 10 120 30 130 60C140 90 130 120 130 120C130 120 110 100 100 70C90 40 100 10 100 10Z" fill="currentColor" className="text-mauve"/>
           <path d="M150 30C150 30 165 45 170 70C175 95 168 115 168 115C168 115 153 100 148 75C143 50 150 30 150 30Z" fill="currentColor" className="text-primary"/>
