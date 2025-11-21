@@ -156,6 +156,10 @@ const ServicesSection = () => {
                             onClick={() => {
                               if (service.name === "Sound Healing") {
                                 navigate("/sound-healing");
+                              } else if (service.name === "Crystal Treasure") {
+                                navigate("/crystal-treasure");
+                              } else if (service.name === "Intuitive Coaching") {
+                                navigate("/intuitive-coaching");
                               }
                             }}
                             onMouseEnter={(e) => {

@@ -3,7 +3,7 @@ import soundBowl from "@/assets/image6.png";
 
 const EventsSection = () => {
   return (
-    <section className="bg-[#b48b80] min-h-[auto] md:max-h-[70vh] md:min-h-[70vh] pb-10 pt-20 md:pt-0 px-4 sm:px-6 md:px-20 overflow-hidden relative">
+    <section id="events" className="bg-[#b48b80] min-h-[auto] md:max-h-[70vh] md:min-h-[70vh] pb-10 pt-20 md:pt-0 px-4 sm:px-6 md:px-20 overflow-hidden relative">
       {/* ===== Image-based Marquee (Top Corner) ===== */}
       <div className="absolute top-[-15px] sm:top-[-10px] md:top-[20px] left-0 w-full overflow-hidden z-30 glow-shimmer">
         <div className="relative whitespace-nowrap">
