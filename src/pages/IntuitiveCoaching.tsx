@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import servicesPhoto2 from "@/assets/img5.jpg";
 import img4 from "@/assets/img4.jpg";
 
 const IntuitiveCoaching = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, []);
+
   return (
     <div className="min-h-screen relative">
       <Navigation />

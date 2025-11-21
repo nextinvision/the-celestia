@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import servicesPhoto2 from "@/assets/img5.jpg"; // Using existing image as placeholder
 import crystalsImage from "@/assets/crystals.jpg";
@@ -7,6 +8,9 @@ import pinkImage from "@/assets/pink.jpg";
 import fluoriteImage from "@/assets/fluorite.jpg";
 
 const CrystalTreasure = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, []);
 
   return (
     <div className="min-h-screen relative">
