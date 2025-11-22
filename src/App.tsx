@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import SoundHealing from "./pages/SoundHealing";
 import CrystalTreasure from "./pages/CrystalTreasure";
 import IntuitiveCoaching from "./pages/IntuitiveCoaching";
+import Reiki from "./pages/Reiki";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/sound-healing" element={<SoundHealing />} />
           <Route path="/crystal-treasure" element={<CrystalTreasure />} />
           <Route path="/intuitive-coaching" element={<IntuitiveCoaching />} />
+          <Route path="/reiki" element={<Reiki />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

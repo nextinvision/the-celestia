@@ -14,7 +14,7 @@ const Navigation = () => {
     { name: "Tarot Guidance", route: null },
     { name: "Numerology", route: null },
     { name: "Sound Healing", route: "/sound-healing" },
-    { name: "Reiki & Multi Modality Healing", route: null },
+    { name: "Reiki & Multi Modality Healing", route: "/reiki" },
     { name: "Intuitive Coaching", route: "/intuitive-coaching" },
     { name: "Crystal Treasure", route: "/crystal-treasure" },
   ];
@@ -82,6 +82,9 @@ const Navigation = () => {
       case "/intuitive-coaching":
         // Warm beige/cream gradient matching Intuitive Coaching theme
         return "linear-gradient(135deg, #FAF8F3 0%, #F5F0E8 50%, #FAF8F3 100%)";
+      case "/reiki":
+        // Light beige/blush gradient matching Reiki theme
+        return "linear-gradient(135deg, #FFF4E1 0%, #F5E9D9 50%, #FFF4E1 100%)";
       default:
         // Cream/beige gradient for home page
         return "linear-gradient(135deg, #FFF4E1 0%, #F5E9D9 50%, #FFF4E1 100%)";

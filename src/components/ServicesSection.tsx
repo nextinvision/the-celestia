@@ -160,6 +160,8 @@ const ServicesSection = () => {
                                 navigate("/crystal-treasure");
                               } else if (service.name === "Intuitive Coaching") {
                                 navigate("/intuitive-coaching");
+                              } else if (service.name === "Reiki & Multi Modality Healing") {
+                                navigate("/reiki");
                               }
                             }}
                             onMouseEnter={(e) => {
