@@ -51,19 +51,12 @@ const AboutSection = () => {
             {/* Rest text */}
             <div className="font-arial text-[#5C4330] leading-relaxed pt-4 md:pt-24 text-[15px] sm:text-[16px] md:text-[17px] relative md:-left-16 text-justify">
               <p>
-                With over 12 years of experience, I guide individuals toward
-                holistic well-being through RighttsignTarot, blending ancient
-                wisdom with modern insights to create a sacred space for
-                transformation and self-discovery. My purpose is to help you
-                awaken your inner light, embrace your true potential, and find
-                balance with compassion and clarity.
+              With over 12 years of experience, I guide individuals toward holistic well-being through RighttsignTarot, blending Ancient Wisdom with Modern Insights to create a Sacred Space for transformation and self-discovery. My purpose is to help you awaken your Inner Light, embrace your True Potential, and find balance with compassion and clarity.
+
               </p>
 
               <p className="mt-4">
-                Beyond readings, my mission is to cultivate a community of
-                conscious living—where peace, purpose, and spiritual harmony
-                flourish, empowering each soul to heal, grow, and reconnect with
-                their spiritual essence.
+              Beyond readings, my mission is to cultivate a Community of Conscious Living—where Peace, Purpose, and Spiritual Harmony flourish, empowering each soul to heal, grow, and reconnect with their Spiritual Essence.
               </p>
               <div className="w-full md:w-fit bg-[#a37f76ad] backdrop-blur-sm rounded-lg border-shimmer bg-shimmer-white mt-4"> 
                 <span className="font-waterfall text-[20px] sm:text-[24px] md:text-[30px] px-3 sm:px-4 font-[800] block text-center md:text-left">
