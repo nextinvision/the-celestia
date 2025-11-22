@@ -1,11 +1,15 @@
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import Navigation from "@/components/Navigation";
 import servicesPhoto2 from "@/assets/img5.jpg"; // Using existing image as placeholder
 
 const SoundHealing = () => {
-  const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, []);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#9A9A7A" }}>
+    <div className="min-h-screen relative" style={{ backgroundColor: "#9A9A7A" }}>
+      <Navigation />
       {/* Top Hero Section */}
       <div className="relative h-[75vh] md:h-[85vh] overflow-visible">
         {/* Background Image with Blur */}
@@ -124,13 +128,6 @@ const SoundHealing = () => {
         </div>
       </div>
 
-      {/* Back Button */}
-      <button
-        onClick={() => navigate(-1)}
-        className="fixed top-4 right-4 z-50 bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-md backdrop-blur-sm transition-colors"
-      >
-        ← Back
-      </button>
     </div>
   );
 };

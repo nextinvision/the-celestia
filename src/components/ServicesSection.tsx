@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import bgforabout from "@/assets/bgabou.png";
 import {
   Carousel,
   CarouselContent,
@@ -82,6 +83,12 @@ const ServicesSection = () => {
 
   return (
     <section id="services" className="w-full bg-[#FFF4E1] py-12 md:py-20 relative overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${bgforabout})`,
+        }}
+      ></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           {/* Left area: Carousel with three service cards */}
@@ -262,16 +269,6 @@ const ServicesSection = () => {
     `}
   </style>
 </button>
-
-<style>
-  {`
-    @keyframes shimmer {
-      0% { transform: translateX(-130%) skewX(-20deg); }
-      100% { transform: translateX(130%) skewX(-20deg); }
-    }
-  `}
-</style>
-
 
                         </figcaption>
                       </figure>

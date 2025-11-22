@@ -1,6 +1,6 @@
 import aboutPhoto from "@/assets/2.png";
 import aboutBg from "@/assets/aboutbackground.png";
-import bgforabout from "@/assets/bgabou.png";
+
 const AboutSection = () => {
   return (  
     <section
@@ -12,9 +12,9 @@ const AboutSection = () => {
     >
       {/* Background Image Layer */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center opacity-60"
         style={{
-          backgroundImage: `url(${bgforabout})`,
+          backgroundImage: `url(${aboutBg})`,
         }}
       ></div>
 
@@ -42,7 +42,7 @@ const AboutSection = () => {
               </h2>
 
               <h3
-                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#A37F76] mt-2 relative md:-left-16 text-shimmer-white font-waterfall text-center md:text-left"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#A37F76] mt-2 relative md:-left-16 text-shimmer font-waterfall text-center md:text-left"
               >
                 Empowered Living
               </h3>

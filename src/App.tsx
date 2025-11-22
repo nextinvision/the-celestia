@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import SoundHealing from "./pages/SoundHealing";
+import CrystalTreasure from "./pages/CrystalTreasure";
+import IntuitiveCoaching from "./pages/IntuitiveCoaching";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +20,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/sound-healing" element={<SoundHealing />} />
+          <Route path="/crystal-treasure" element={<CrystalTreasure />} />
+          <Route path="/intuitive-coaching" element={<IntuitiveCoaching />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
