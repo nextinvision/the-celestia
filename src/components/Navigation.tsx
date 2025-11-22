@@ -195,8 +195,8 @@ const Navigation = () => {
         <div 
           className={`md:hidden fixed inset-0 z-40 transition-all duration-300 ease-in-out ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
           style={{ 
-            background: navbarBgGradient,
-            transition: "background 2s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out"
+            backgroundColor: "#FFF4E1",
+            transition: "opacity 0.3s ease-in-out, visibility 0.3s ease-in-out"
           }}
         >
           <div className="flex flex-col items-center justify-center min-h-screen space-y-6 sm:space-y-8">

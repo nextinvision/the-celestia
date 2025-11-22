@@ -55,14 +55,14 @@ const ServicesSection = () => {
   const [api, setApi] = useState<CarouselApi>();
 
   return (
-    <section id="services" className="w-full bg-[#FFF4E1] py-12 md:py-20 relative overflow-hidden">
+    <section id="services" className="w-full bg-[#FFF4E1] py-6 sm:py-8 md:py-12 relative overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: `url(${bgforabout})`,
         }}
       ></div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="w-full flex justify-center">
           {/* Carousel with service cards */}
           <div className="w-full relative max-w-6xl mx-auto">
@@ -76,8 +76,8 @@ const ServicesSection = () => {
             >
               <CarouselContent className="-ml-2 md:-ml-4">
                 {services.map((service, i) => (
-                  <CarouselItem key={i} className="pl-2 md:pl-4 basis-1/3 min-w-0 flex justify-center">
-                    <div className="flex-1 bg-transparent flex flex-col h-full w-full" style={{ maxWidth: "280px" }}>
+                  <CarouselItem key={i} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 min-w-0 flex justify-center">
+                    <div className="flex-1 bg-transparent flex flex-col h-full w-full max-w-[170px] sm:max-w-[220px] md:max-w-[280px]">
                       <figure className="w-full flex flex-col h-full">
                         {/* Container with arched top using SVG clip-path */}
                         <div
@@ -112,15 +112,15 @@ const ServicesSection = () => {
                         </div>
 
                         {/* Text below image */}
-                        <figcaption className="mt-4 text-center flex flex-col flex-1 min-h-[180px]">
+                        <figcaption className="mt-4 text-center flex flex-col flex-1 min-h-[160px] sm:min-h-[180px]">
                           <div className="flex-shrink-0">
-                            <div className="text-xs text-[#A37F76] tracking-widest font-semibold uppercase">
+                            <div className="text-xs sm:text-xs text-[#A37F76] tracking-widest font-semibold uppercase">
                               {service.name.split(" ")[0]}
                             </div>
-                            <div className="mt-1 text-lg md:text-xl font-serif text-[#3A1D0F] font-bold">
+                            <div className="mt-1 text-base sm:text-lg md:text-xl font-serif text-[#3A1D0F] font-bold">
                               {service.name}
                             </div>
-                            <div className="mt-2 text-sm text-[#5C4330] italic">
+                            <div className="mt-2 text-xs sm:text-sm text-[#5C4330] italic px-2 sm:px-0">
                               {service.description}
                             </div>
                           </div>
@@ -131,7 +131,7 @@ const ServicesSection = () => {
   style={{
     clipPath:
       "polygon(12% 0%, 88% 0%, 100% 10%, 100% 90%, 88% 100%, 12% 100%, 0% 90%, 0% 10%)",
-    padding: "10px 28px",
+    padding: "8px 20px",
     border: "none",
     cursor: "pointer",
     transition: "transform 220ms ease, box-shadow 220ms ease",
@@ -225,7 +225,7 @@ const ServicesSection = () => {
 
   {/* Text */}
   <span
-    className="relative z-10 text-white font-semibold text-sm uppercase tracking-wide drop-shadow-md"
+    className="relative z-10 text-white font-semibold text-xs sm:text-sm uppercase tracking-wide drop-shadow-md"
     style={{
       textShadow: "0 0 6px rgba(255,195,120,0.75)",
     }}
@@ -255,8 +255,8 @@ const ServicesSection = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 bg-[#B48B80] text-white border-none hover:bg-[#A37F76] z-10" />
-              <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#B48B80] text-white border-none hover:bg-[#A37F76] z-10" />
+              <CarouselPrevious className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 bg-[#B48B80] text-white border-none hover:bg-[#A37F76] z-10 h-8 w-8 sm:h-10 sm:w-10" />
+              <CarouselNext className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 bg-[#B48B80] text-white border-none hover:bg-[#A37F76] z-10 h-8 w-8 sm:h-10 sm:w-10" />
             </Carousel>
           </div>
         </div>
@@ -295,8 +295,11 @@ const ServicesSection = () => {
         /* The clip-path uses objectBoundingBox units (0-1) so it scales proportionally */
         @media (max-width: 640px) {
           .service-image-container {
-            height: 320px !important;
-            min-height: 320px !important;
+            height: 300px !important;
+            min-height: 300px !important;
+          }
+          .gate-shape-button {
+            padding: 8px 20px !important;
           }
         }
         @media (min-width: 641px) and (max-width: 768px) {
@@ -304,11 +307,17 @@ const ServicesSection = () => {
             height: 380px !important;
             min-height: 380px !important;
           }
+          .gate-shape-button {
+            padding: 10px 24px !important;
+          }
         }
         @media (min-width: 769px) {
           .service-image-container {
             height: 430px !important;
             min-height: 430px !important;
+          }
+          .gate-shape-button {
+            padding: 10px 28px !important;
           }
         }
         
@@ -318,6 +327,13 @@ const ServicesSection = () => {
           height: 100%;
           object-fit: cover;
           display: block;
+        }
+        
+        /* Touch-friendly interactions for mobile */
+        @media (max-width: 640px) {
+          .gate-shape-button:active {
+            transform: translateY(-2px) !important;
+          }
         }
       `}</style>
     </section>

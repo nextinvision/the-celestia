@@ -5,13 +5,13 @@ import bglotus from "@/assets/herobg1.png";
 const HeroSection = () => {
   return (
     <section
-      className="relative min-h-[35vh] md:min-h-screen flex flex-col md:flex-row items-center md:items-center pt-16 pb-2 md:pt-20 md:pb-0 overflow-x-hidden md:overflow-x-visible"
+      className="relative h-auto md:min-h-screen flex flex-col md:flex-row items-center md:items-center pt-20 pb-0 md:pt-20 md:pb-0 overflow-x-hidden md:overflow-x-visible"
       style={{ backgroundColor: "#FFF4E1" }}
       id="home"
     >
       {/* BG IMAGE LAYER */}
       <div
-        className="absolute inset-0 w-full h-[120vh]"
+        className="absolute inset-0 w-full h-full md:h-[120vh]"
         style={{
           backgroundImage: `url(${bglotus})`,
           backgroundRepeat: "no-repeat",
@@ -23,9 +23,9 @@ const HeroSection = () => {
       {/* CONTENT CONTAINER */}
       <div className="container mx-auto px-4 sm:px-6 md:px-6 relative z-30 w-full">
         {/* Mobile Layout: Text first, then image */}
-        <div className="flex flex-col md:grid md:grid-cols-2 items-start md:items-center gap-6 md:gap-0">
+        <div className="flex flex-col md:grid md:grid-cols-2 items-start md:items-center gap-4 md:gap-0">
           {/* TEXT CONTENT */}
-          <div className="space-y-3 md:pl-10 lg:pl-6 font-semibold order-1 w-full">
+          <div className="space-y-2 md:space-y-3 md:pl-10 lg:pl-6 font-semibold order-1 w-full">
             <h1
               className="text-[32px] sm:text-[42px] md:text-[46px] lg:text-[60px] xl:text-[70px] font-serif font-bold leading-none text-shimmer-white"
               style={{
@@ -49,12 +49,12 @@ const HeroSection = () => {
 
       {/* IMAGE - Mobile: Centered in flow, Desktop: Absolute positioned */}
       <div
-        className="relative md:absolute bottom-0 md:bottom-[-150px] right-0 md:right-[132px] flex items-center md:items-end justify-center md:justify-start z-20 w-auto md:w-auto mt-4 md:mt-0 px-0 md:px-0"
+        className="relative md:absolute bottom-0 md:bottom-[-150px] right-0 md:right-[132px] flex items-center md:items-end justify-center md:justify-start z-20 w-auto md:w-auto mt-2 mb-0 md:mt-0 md:mb-0 px-0 md:px-0"
       >
         <img
           src={heroPortrait}
           alt="Sunita Ramrakhiyani - Righttsign Tarot"
-          className="h-[110vh] sm:h-[120vh] md:max-h-[110vh] w-auto md:w-auto scale-110 sm:scale-110 md:scale-100 object-contain mx-auto md:mx-0 md:translate-x-[16%]"
+          className="h-[45vh] sm:h-[120vh] md:max-h-[110vh] w-auto md:w-auto scale-110 sm:scale-110 md:scale-100 object-contain mx-auto md:mx-0 md:translate-x-[16%]"
         />
       </div>
 

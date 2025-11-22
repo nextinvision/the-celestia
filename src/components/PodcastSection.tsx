@@ -1,5 +1,5 @@
 import { useState } from "react";
-import vectorImage from "@/assets/Vector.png";
+import vectorImage1 from "@/assets/Vector (1).png";
 
 const PodcastSection = () => {
   // YouTube video ID from: https://youtu.be/OCcDjCff1j4?si=e81qvEiuDfilV6bq
@@ -24,22 +24,20 @@ const PodcastSection = () => {
   return (
     <section
       id="podcast"
-      className="bg-[#FFF4E1] min-h-auto md:max-h-[85vh] md:min-h-[85vh] relative overflow-hidden flex items-center py-12 md:py-0"
+      className="bg-[#FFF4E1] min-h-[80vh] md:max-h-[120vh] md:min-h-[120vh] relative overflow-hidden flex items-center py-12 md:py-0"
       style={{
         backgroundColor: "#FFF4E1",
       }}
     >
-      {/* Vector Background Image */}
-      <div
-        className="absolute inset-0 pointer-events-none z-0"
-        style={{
-          backgroundImage: `url(${vectorImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          opacity: 1,
-        }}
-      ></div>
+      {/* Vector (1) Image at top */}
+      <div className="absolute top-0 left-0 right-0 pointer-events-none z-10 w-full">
+        <img
+          src={vectorImage1}
+          alt=""
+          className="w-full h-auto object-cover"
+          style={{ display: "block" }}
+        />
+      </div>
 
       {/* Background decorative elements */}
       <div
@@ -51,12 +49,12 @@ const PodcastSection = () => {
       ></div>
 
       {/* Content Layer */}
-      <div className="container mx-auto px-4 sm:px-6 md:px-20 relative z-20 w-full py-4">
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
+      <div className="container mx-auto px-4 sm:px-6 md:px-20 relative z-20 w-full pt-0 md:pt-0 pb-4">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start">
           {/* Left - Description */}
-          <div className="relative flex flex-col justify-center space-y-2 md:space-y-3 order-2 md:order-1">
+          <div className="relative flex flex-col justify-center space-y-2 md:space-y-3 order-2 md:order-1 md:-mt-12">
             {/* Section Label */}
-            <div className="mb-1 pt-8 md:pt-12">
+            <div className="mb-1 pt-2 md:pt-0">
               <span className="inline-block text-xs sm:text-sm font-semibold text-[#A37F76] uppercase tracking-wider">
                 Explore Our Podcast
               </span>
@@ -115,7 +113,7 @@ const PodcastSection = () => {
           </div>
 
           {/* Right - Video Thumbnail/Embed */}
-          <div className="relative flex justify-center md:justify-end order-1 md:order-2">
+          <div className="relative flex justify-center md:justify-end order-1 md:order-2 md:pt-0 md:-mt-12">
             <div className="relative w-full max-w-full sm:max-w-[500px] md:max-w-[550px] group">
               {!isPlaying ? (
                 <div
