@@ -56,7 +56,7 @@ const AboutSection = () => {
               </p>
 
               <p className="mt-4">
-              Beyond readings, my mission is to cultivate a Community of Conscious Living—where Peace, Purpose, and Spiritual Harmony flourish, empowering each soul to heal, grow, and reconnect with their Spiritual Essence.
+              Beyond readings, my mission is to cultivate a Community of Conscious Living—where Peace, Purpose, and Spiritual Harmony flourish, empowering each soul to heal, grow, and reconnect with their Spiritual Essence.
               </p>
               <div className="w-full md:w-fit bg-[#a37f76ad] backdrop-blur-sm rounded-lg border-shimmer bg-shimmer-white mt-4"> 
                 <span className="font-waterfall text-[20px] sm:text-[24px] md:text-[30px] px-3 sm:px-4 font-[800] block text-center md:text-left">
