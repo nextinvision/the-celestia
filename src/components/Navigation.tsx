@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png"; // adjust path if needed
+import navbg from "@/assets/navbg.png";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -95,9 +96,13 @@ const Navigation = () => {
 
   return (
     <nav 
-      className="fixed top-0 left-0 right-0 z-50 shadow-md"
+      className="fixed top-0 left-0 right-0 z-50 shadow-md opacity-100 backdrop-blur-md"
       style={{ 
-        background: navbarBgGradient,
+        backgroundImage: `url(${navbg})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundColor: "rgba(20, 25, 40, 0.6)",
         transition: "background 2s ease-in-out"
       }}
     >

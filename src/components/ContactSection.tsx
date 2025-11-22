@@ -34,7 +34,7 @@ const ContactSection = () => {
           {/* Left - Contact Info */}
           <div className="space-y-6 sm:space-y-8 md:space-y-12 order-2 md:order-1" style={{ position: "relative", zIndex: 50 }}>
             <div className="space-y-4 sm:space-y-6">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-script text-foreground text-shimmer text-right md:text-left">
+              <h2 className="text-4xl sm:text-4xl md:text-7xl lg:text-7xl font-serif text-foreground text-shimmer text-right md:text-left">
                 Connect With Me
               </h2>
               
@@ -101,7 +101,7 @@ const ContactSection = () => {
           </div>
 
           {/* Right - Tarot Cards Image */}
-          <div className="relative flex justify-center md:justify-end items-start order-1 md:order-2 mt-0 md:-mt-[60px]" style={{ zIndex: 1, position: "relative" }}>
+          <div className="relative flex justify-center md:justify-end -right-0 md:-right-0 items-start order-1 md:order-2 mt-0 md:-mt-[60px]" style={{ zIndex: 1, position: "relative" }}>
             <div className="md:-translate-x-[50px]">
               <div className="rounded-2xl sm:rounded-3xl overflow-hidden w-full max-w-full sm:max-w-md shadow-2xl golden-border-solid p-2" style={{ position: "relative", zIndex: 1 }}>
                 <img 

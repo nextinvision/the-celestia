@@ -1,6 +1,6 @@
 import heroPortrait from "@/assets/hero-portrait.png";
 import herobg from "@/assets/image 3.png";
-import bglotus from "@/assets/bglotus.png";
+import bglotus from "@/assets/herobg1.png";
 
 const HeroSection = () => {
   return (
@@ -10,14 +10,15 @@ const HeroSection = () => {
       id="home"
     >
       {/* BG IMAGE LAYER */}
-      {/* <div
-        className="absolute inset-0 bg-cover bg-center"
+      <div
+        className="absolute inset-0 w-full h-[120vh]"
         style={{
           backgroundImage: `url(${bglotus})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
-      ></div> */}
+      ></div>
 
       {/* CONTENT CONTAINER */}
       <div className="container mx-auto px-4 sm:px-6 md:px-6 relative z-30 w-full">
@@ -53,7 +54,7 @@ const HeroSection = () => {
         <img
           src={heroPortrait}
           alt="Sunita Ramrakhiyani - Righttsign Tarot"
-          className="h-[110vh] sm:h-[120vh] md:max-h-[140vh] w-auto md:w-auto scale-110 sm:scale-110 md:scale-100 object-contain mx-auto md:mx-0 md:translate-x-[16%]"
+          className="h-[110vh] sm:h-[120vh] md:max-h-[110vh] w-auto md:w-auto scale-110 sm:scale-110 md:scale-100 object-contain mx-auto md:mx-0 md:translate-x-[16%]"
         />
       </div>
 

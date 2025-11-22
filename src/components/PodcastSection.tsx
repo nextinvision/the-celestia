@@ -198,7 +198,7 @@ const PodcastSection = () => {
       ></div>
       <div
         className="golden-particle golden-particle-medium"
-        style={{ top: "25%", left: "8%", animationDelay: "1s" }}
+        style={{ top: "25%", left: "8%", animationDelay: "1.5s" }}
       ></div>
       <div
         className="golden-particle golden-particle-small golden-particle-drift"

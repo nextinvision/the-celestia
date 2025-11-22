@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import bgforabout from "@/assets/bgabou.png";
 import {
   Carousel,
   CarouselContent,
@@ -8,9 +9,12 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import servicesPhoto1 from "@/assets/img4.jpg";
-import servicesPhoto2 from "@/assets/img5.jpg";
+import soundhealing from "@/assets/soundhealing.jpg";
+import reiki from "@/assets/reiki.png";
+import numerology from "@/assets/numer.jpg";
 import tarotCards from "@/assets/tarot-cards.jpg";
+import crystals from "@/assets/crystals.jpg";
+import intuitivecoaching from "@/assets/coaching.jpg";
 
 const services = [
   {
@@ -19,29 +23,30 @@ const services = [
     image: tarotCards,
   },
   {
+    name: "Reiki & Multi Modality Healing",
+    description: "Restore balance through energy healing",
+    image: reiki,
+  },
+  {
     name: "Numerology",
     description: "Unlock the power of numbers in your life",
-    image: servicesPhoto1,
+    image: numerology,
   },
   {
     name: "Sound Healing",
     description: "Harmonize your energy with vibrational therapy",
-    image: servicesPhoto2,
+    image: soundhealing,
   },
-  {
-    name: "Reiki & Multi Modality Healing",
-    description: "Restore balance through energy healing",
-    image: servicesPhoto1,
-  },
+  
   {
     name: "Intuitive Coaching",
     description: "Navigate life with intuitive guidance",
-    image: servicesPhoto2,
+    image: intuitivecoaching,
   },
   {
     name: "Crystal Treasure",
     description: "Harness the energy of sacred crystals",
-    image: tarotCards,
+    image: crystals,
   },
 ];
 
@@ -78,6 +83,12 @@ const ServicesSection = () => {
 
   return (
     <section id="services" className="w-full bg-[#FFF4E1] py-12 md:py-20 relative overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${bgforabout})`,
+        }}
+      ></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           {/* Left area: Carousel with three service cards */}
@@ -141,44 +152,124 @@ const ServicesSection = () => {
                             </div>
                           </div>
                           {/* Read More Button with Gate Shape */}
-                          <button 
-                            className="mt-auto relative gate-shape-button group mx-auto block flex-shrink-0"
-                            style={{
-                              clipPath: "polygon(12% 0%, 88% 0%, 100% 10%, 100% 90%, 88% 100%, 12% 100%, 0% 90%, 0% 10%)",
-                              padding: "10px 28px",
-                              background: "#B48B80",
-                              border: "none",
-                              cursor: "pointer",
-                              transition: "all 0.3s ease",
-                              borderRadius: "16px",
-                              boxShadow: "0 4px 15px rgba(180, 139, 128, 0.3), 0 0 20px rgba(180, 139, 128, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2)",
-                            }}
-                            onClick={() => {
-                              if (service.name === "Sound Healing") {
-                                navigate("/sound-healing");
-                              } else if (service.name === "Crystal Treasure") {
-                                navigate("/crystal-treasure");
-                              } else if (service.name === "Intuitive Coaching") {
-                                navigate("/intuitive-coaching");
-                              } else if (service.name === "Reiki & Multi Modality Healing") {
-                                navigate("/reiki");
-                              }
-                            }}
-                            onMouseEnter={(e) => {
-                              e.currentTarget.style.boxShadow = "0 6px 20px rgba(180, 139, 128, 0.5), 0 0 30px rgba(180, 139, 128, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)";
-                              e.currentTarget.style.transform = "translateY(-2px)";
-                              e.currentTarget.style.background = "#A37F76";
-                            }}
-                            onMouseLeave={(e) => {
-                              e.currentTarget.style.boxShadow = "0 4px 15px rgba(180, 139, 128, 0.3), 0 0 20px rgba(180, 139, 128, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2)";
-                              e.currentTarget.style.transform = "translateY(0)";
-                              e.currentTarget.style.background = "#B48B80";
-                            }}
-                          >
-                            <span className="relative z-10 text-white font-semibold text-sm uppercase tracking-wide">
-                              Read More
-                            </span>
-                          </button>
+                          <button
+  className="mt-auto relative gate-shape-button group mx-auto block flex-shrink-0 overflow-hidden"
+  aria-label="Read more about this service"
+  style={{
+    clipPath:
+      "polygon(12% 0%, 88% 0%, 100% 10%, 100% 90%, 88% 100%, 12% 100%, 0% 90%, 0% 10%)",
+    padding: "10px 28px",
+    border: "none",
+    cursor: "pointer",
+    transition: "transform 220ms ease, box-shadow 220ms ease",
+    position: "relative",
+    background: "transparent",
+  }}
+  onClick={() => {
+    if (service.name === "Sound Healing") {
+      navigate("/sound-healing");
+    }
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.transform = "translateY(-4px)";
+    e.currentTarget.style.boxShadow =
+      "0 12px 36px rgba(180,140,90,0.32), 0 0 45px rgba(255,210,140,0.18)";
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = "translateY(0)";
+    e.currentTarget.style.boxShadow =
+      "0 8px 24px rgba(180,140,90,0.18), 0 0 28px rgba(255,210,140,0.10)";
+  }}
+>
+  {/* Deeper gold-bronze base */}
+  <div
+    aria-hidden
+    className="absolute inset-0"
+    style={{
+      background:
+        "linear-gradient(135deg, #8E6A48 0%, #C49B63 35%, #E6C183 65%, #B08859 100%)",
+      zIndex: 0,
+    }}
+  />
+
+  {/* Metallic sheen layer */}
+  <div
+    aria-hidden
+    className="absolute inset-0"
+    style={{
+      background:
+        "linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.20) 100%)",
+      mixBlendMode: "overlay",
+      zIndex: 1,
+    }}
+  />
+
+  {/* Stronger golden shimmer */}
+  <div
+    aria-hidden
+    className="absolute inset-0"
+    style={{
+      background:
+        "linear-gradient(90deg, transparent 0%, rgba(255,230,160,0.45) 25%, rgba(255,240,180,0.70) 50%, rgba(255,230,160,0.45) 75%, transparent 100%)",
+      backgroundSize: "220% 100%",
+      animation: "goldenSweep 2.4s linear infinite",
+      opacity: 0.75,
+      transform: "skewX(-20deg)",
+      zIndex: 2,
+    }}
+  />
+
+  {/* Soft golden inner glow */}
+  <div
+    aria-hidden
+    className="absolute inset-0"
+    style={{
+      background:
+        "radial-gradient(circle at center, rgba(255,215,160,0.35) 0%, transparent 60%)",
+      zIndex: 1,
+      mixBlendMode: "screen",
+      animation: "goldenPulse 4s ease-in-out infinite",
+    }}
+  />
+
+  {/* Hover flash */}
+  <div
+    aria-hidden
+    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+    style={{
+      background:
+        "linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.45) 50%, rgba(255,255,255,0.25) 100%)",
+      transform: "skewX(-15deg)",
+      zIndex: 3,
+    }}
+  />
+
+  {/* Text */}
+  <span
+    className="relative z-10 text-white font-semibold text-sm uppercase tracking-wide drop-shadow-md"
+    style={{
+      textShadow: "0 0 6px rgba(255,195,120,0.75)",
+    }}
+  >
+    Read More
+  </span>
+
+  <style>
+    {`
+      @keyframes goldenSweep {
+        0% { background-position: -150% 0; }
+        100% { background-position: 150% 0; }
+      }
+
+      @keyframes goldenPulse {
+        0% { opacity: 0.40; transform: scale(1); }
+        50% { opacity: 0.65; transform: scale(1.025); }
+        100% { opacity: 0.40; transform: scale(1); }
+      }
+    `}
+  </style>
+</button>
+
                         </figcaption>
                       </figure>
                     </div>
