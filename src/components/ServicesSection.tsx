@@ -139,7 +139,9 @@ const ServicesSection = () => {
     background: "transparent",
   }}
   onClick={() => {
-    if (service.name === "Sound Healing") {
+    if (service.name === "Tarot Guidance") {
+      navigate("/tarot-guidance");
+    } else if (service.name === "Sound Healing") {
       navigate("/sound-healing");
     } else if (service.name === "Reiki & Multi Modality Healing") {
       navigate("/reiki");

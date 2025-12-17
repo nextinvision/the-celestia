@@ -9,6 +9,7 @@ import SoundHealing from "./pages/SoundHealing";
 import CrystalTreasure from "./pages/CrystalTreasure";
 import IntuitiveCoaching from "./pages/IntuitiveCoaching";
 import Reiki from "./pages/Reiki";
+import TarotGuidance from "./pages/TarotGuidance";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/tarot-guidance" element={<TarotGuidance />} />
           <Route path="/sound-healing" element={<SoundHealing />} />
           <Route path="/crystal-treasure" element={<CrystalTreasure />} />
           <Route path="/intuitive-coaching" element={<IntuitiveCoaching />} />
