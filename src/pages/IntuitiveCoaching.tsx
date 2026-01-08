@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Navigation from "@/components/Navigation";
+import Navigation from "@/components/layout/Navigation";
 import servicesPhoto2 from "@/assets/img5.jpg";
 import img4 from "@/assets/img4.jpg";
 
@@ -11,7 +11,7 @@ const IntuitiveCoaching = () => {
   return (
     <div className="min-h-screen relative">
       <Navigation />
-      
+
       {/* Header Banner Section - Pixel Perfect */}
       <section className="w-full relative pt-16 md:pt-20" style={{ backgroundColor: "#FAF8F3" }}>
         <div className="container mx-auto px-4 sm:px-6 py-12 md:py-16 lg:py-20">
@@ -21,19 +21,19 @@ const IntuitiveCoaching = () => {
               {/* Left Starbursts - positioned to the left of COACHING */}
               <div className="absolute left-0 flex flex-col items-center justify-center" style={{ top: "50%", transform: "translateY(-50%)", gap: "14px" }}>
                 <svg width="9" height="9" viewBox="0 0 24 24" fill="none" style={{ color: "#F5A082", marginTop: "-6px" }}>
-                  <path d="M12 2L14 8L20 8L15 12L17 18L12 15L7 18L9 12L4 8L10 8L12 2Z" fill="currentColor"/>
+                  <path d="M12 2L14 8L20 8L15 12L17 18L12 15L7 18L9 12L4 8L10 8L12 2Z" fill="currentColor" />
                 </svg>
                 <svg width="9" height="9" viewBox="0 0 24 24" fill="none" style={{ color: "#F5A082", marginTop: "6px" }}>
-                  <path d="M12 2L14 8L20 8L15 12L17 18L12 15L7 18L9 12L4 8L10 8L12 2Z" fill="currentColor"/>
+                  <path d="M12 2L14 8L20 8L15 12L17 18L12 15L7 18L9 12L4 8L10 8L12 2Z" fill="currentColor" />
                 </svg>
               </div>
-              
+
               {/* COACHING on top */}
               <div className="flex flex-col items-center">
-                <span 
-                  className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold uppercase tracking-wide" 
-                  style={{ 
-                    color: "#2C2C2C", 
+                <span
+                  className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold uppercase tracking-wide"
+                  style={{
+                    color: "#2C2C2C",
                     lineHeight: "1.1",
                     fontFamily: 'system-ui, -apple-system, sans-serif',
                     letterSpacing: "0.05em"
@@ -41,12 +41,12 @@ const IntuitiveCoaching = () => {
                 >
                   COACHING
                 </span>
-                
+
                 {/* "with" and "SUNITA RAMRAKHIYANI" on same line */}
                 <div className="flex items-baseline gap-2 md:gap-3 mt-2 md:mt-3">
-                  <span 
-                    className="text-xl md:text-2xl lg:text-3xl lowercase" 
-                    style={{ 
+                  <span
+                    className="text-xl md:text-2xl lg:text-3xl lowercase"
+                    style={{
                       fontFamily: '"Dancing Script", "Brush Script MT", "Lucida Handwriting", cursive',
                       color: "#2C2C2C",
                       lineHeight: "1.2",
@@ -56,10 +56,10 @@ const IntuitiveCoaching = () => {
                   >
                     with
                   </span>
-                  <span 
-                    className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold uppercase tracking-wide" 
-                    style={{ 
-                      color: "#2C2C2C", 
+                  <span
+                    className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold uppercase tracking-wide"
+                    style={{
+                      color: "#2C2C2C",
                       lineHeight: "1.1",
                       fontFamily: 'system-ui, -apple-system, sans-serif',
                       letterSpacing: "0.05em"
@@ -69,20 +69,20 @@ const IntuitiveCoaching = () => {
                   </span>
                 </div>
               </div>
-              
+
               {/* Right Starbursts - positioned to the right of SUNITA RAMRAKHIYANI */}
               <div className="absolute right-0 flex flex-col items-center justify-center" style={{ top: "50%", transform: "translateY(-50%)", gap: "14px" }}>
                 <svg width="9" height="9" viewBox="0 0 24 24" fill="none" style={{ color: "#F5A082", marginTop: "-6px" }}>
-                  <path d="M12 2L14 8L20 8L15 12L17 18L12 15L7 18L9 12L4 8L10 8L12 2Z" fill="currentColor"/>
+                  <path d="M12 2L14 8L20 8L15 12L17 18L12 15L7 18L9 12L4 8L10 8L12 2Z" fill="currentColor" />
                 </svg>
                 <svg width="9" height="9" viewBox="0 0 24 24" fill="none" style={{ color: "#F5A082", marginTop: "6px" }}>
-                  <path d="M12 2L14 8L20 8L15 12L17 18L12 15L7 18L9 12L4 8L10 8L12 2Z" fill="currentColor"/>
+                  <path d="M12 2L14 8L20 8L15 12L17 18L12 15L7 18L9 12L4 8L10 8L12 2Z" fill="currentColor" />
                 </svg>
               </div>
             </div>
           </div>
         </div>
-        
+
         {/* Golden Stars - Animated */}
         <div className="golden-star golden-star-medium" style={{ top: "35%", left: "20%", animationDelay: "0s" }}>
           <svg viewBox="0 0 24 24">
@@ -114,7 +114,7 @@ const IntuitiveCoaching = () => {
       {/* Main Hero Section */}
       <section className="relative w-full min-h-screen overflow-hidden" style={{ backgroundColor: "#F5F0E8" }}>
         {/* Textured Background with Organic Shapes */}
-        <div 
+        <div
           className="absolute inset-0 opacity-30"
           style={{
             backgroundImage: `
@@ -126,7 +126,7 @@ const IntuitiveCoaching = () => {
         ></div>
 
         {/* Blurred Palm Leaves on Right */}
-        <div 
+        <div
           className="absolute right-0 top-0 w-1/3 h-full opacity-20"
           style={{
             backgroundImage: `url(${servicesPhoto2})`,
@@ -142,7 +142,7 @@ const IntuitiveCoaching = () => {
             {/* Left Side - Text Box */}
             <div className="relative z-40 mt-8 md:mt-12 ml-12 md:ml-20 lg:ml-32 text-box-right-align">
               <div className="bg-white p-4 md:p-6 lg:p-8 shadow-lg text-box-overlap text-center">
-                <p 
+                <p
                   className="text-2xl md:text-3xl lg:text-4xl font-serif italic text-[#3A1D0F] mb-2 md:mb-3"
                   style={{ fontFamily: 'cursive' }}
                 >
@@ -176,7 +176,7 @@ const IntuitiveCoaching = () => {
                 {/* Gate Shape using SVG clip-path */}
                 <div
                   className="w-[80%] block relative overflow-visible gate-position"
-                  style={{ 
+                  style={{
                     height: "600px",
                     aspectRatio: "auto"
                   }}
@@ -195,9 +195,9 @@ const IntuitiveCoaching = () => {
                       </clipPath>
                     </defs>
                   </svg>
-                  <img 
-                    src={servicesPhoto2} 
-                    alt="Coaching Background" 
+                  <img
+                    src={servicesPhoto2}
+                    alt="Coaching Background"
                     className="w-full h-full object-cover"
                     style={{
                       clipPath: `url(#backgroundGateClip)`,
@@ -211,7 +211,7 @@ const IntuitiveCoaching = () => {
                 {/* Polaroid Container with White Border */}
                 <div
                   className="block relative bg-white shadow-xl polaroid-container"
-                  style={{ 
+                  style={{
                     transform: "rotate(9deg)"
                   }}
                 >

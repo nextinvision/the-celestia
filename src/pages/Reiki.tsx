@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Navigation from "@/components/Navigation";
+import Navigation from "@/components/layout/Navigation";
 import servicesPhoto1 from "@/assets/img4.jpg";
 import servicesPhoto2 from "@/assets/img5.jpg";
 
@@ -11,7 +11,7 @@ const Reiki = () => {
   return (
     <div className="min-h-screen relative" style={{ backgroundColor: "#FFFBF7" }}>
       <Navigation />
-      
+
       {/* Top Section with Photos and Large Text Overlay */}
       <section className="relative w-full pt-20 md:pt-24 pb-8 md:pb-12" style={{ overflow: "visible", paddingLeft: "0", paddingRight: "0" }}>
         <div className="w-full relative">
@@ -47,9 +47,9 @@ const Reiki = () => {
             <div className="absolute inset-0 z-20 flex flex-col items-center justify-center pointer-events-none px-6 md:px-8">
               {/* "heal with me" text - spanning from left to right with more spacing */}
               <div className="w-full mb-2 md:mb-4 relative">
-                <h1 
+                <h1
                   className="font-serif"
-                  style={{ 
+                  style={{
                     color: "#D2691E",
                     fontWeight: 400,
                     letterSpacing: "0.1em",
@@ -69,12 +69,12 @@ const Reiki = () => {
                 </h1>
               </div>
             </div>
-            
+
             {/* "REIKI" text - positioned at bottom left, overflowing into second section */}
             <div className="absolute left-0 z-20 pointer-events-none px-6 md:px-8" style={{ bottom: "-100px" }}>
-              <h2 
+              <h2
                 className="font-sans uppercase text-left"
-                style={{ 
+                style={{
                   color: "#D2691E",
                   letterSpacing: "0.05em",
                   lineHeight: "1",
@@ -98,9 +98,9 @@ const Reiki = () => {
             {/* Left Column - Text Content */}
             <div className="md:col-span-2 space-y-6 md:space-y-8 pr-4 md:pr-8 pl-4 md:pl-6">
               {/* Headline */}
-              <h3 
+              <h3
                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif"
-                style={{ 
+                style={{
                   color: "#D2691E",
                   fontWeight: 400,
                   letterSpacing: "0.01em",
@@ -109,11 +109,11 @@ const Reiki = () => {
               >
                 Healing Begins Where You Return to Yourself
               </h3>
-              
+
               {/* Body Text */}
-              <p 
+              <p
                 className="text-sm sm:text-base md:text-lg lg:text-xl font-serif italic"
-                style={{ 
+                style={{
                   color: "#D2691E",
                   lineHeight: "1.6",
                   maxWidth: "95%"

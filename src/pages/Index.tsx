@@ -1,4 +1,4 @@
-import Navigation from "@/components/Navigation";
+import Navigation from "@/components/layout/Navigation";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import PodcastSection from "@/components/PodcastSection";
@@ -6,7 +6,7 @@ import ServicesSection from "@/components/ServicesSection";
 import EventsSection from "@/components/EventsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
+import Footer from "@/components/layout/Footer";
 
 const Index = () => {
   return (
@@ -19,7 +19,7 @@ const Index = () => {
       <EventsSection />
       <TestimonialsSection />
       <ContactSection />
-      <Footer/>
+      <Footer />
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Navigation from "@/components/Navigation";
+import Navigation from "@/components/layout/Navigation";
 import servicesPhoto2 from "@/assets/img5.jpg"; // Using existing image as placeholder
 
 const SoundHealing = () => {
@@ -22,7 +22,7 @@ const SoundHealing = () => {
           }}
         ></div>
         <div className="absolute inset-0 bg-black/20"></div>
-        
+
         {/* Logo/Top Left */}
         <div className="absolute top-6 left-6 md:top-8 md:left-8 z-10">
           <span className="text-white/95 text-xl md:text-2xl font-serif tracking-[0.2em] font-light">SOUNDS</span>
@@ -53,36 +53,36 @@ const SoundHealing = () => {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full -translate-y-[200px] md:-translate-y-[250px] z-20">
           <div className="container mx-auto px-4">
             <div className="relative max-w-2xl mx-auto">
-            {/* Text Overlays Above Image */}
-            <div className="flex justify-between items-center mb-1 md:mb-2 px-1 md:px-2">
-              <span className="text-white/65 text-[9px] md:text-xs font-sans uppercase tracking-[0.3em] font-light">ALIGNED</span>
-              <span className="text-white/65 text-[9px] md:text-xs font-sans uppercase tracking-[0.3em] font-light">TRANSFORM</span>
-            </div>
-
-            {/* Main Image */}
-            <div className="relative flex justify-center">
-              <img
-                src={servicesPhoto2}
-                alt="Sound Healing Session"
-                className="object-contain"
-                style={{ borderRadius: "2px", maxWidth: "95%", maxHeight: "450px" }}
-              />
-            </div>
-
-            {/* Text Overlays Below Image */}
-            <div className="flex justify-between items-center mt-1 md:mt-2 px-1 md:px-2">
-              <span className="text-white/65 text-[9px] md:text-xs font-sans uppercase tracking-[0.3em] font-light">HEAL</span>
-              <div className="flex items-center gap-1 md:gap-2">
-                <div className="h-[0.5px] w-6 md:w-8 bg-white/40"></div>
-                <span className="text-white/65 text-[9px] md:text-xs font-sans uppercase tracking-[0.3em] font-light">MANIFEST</span>
-                <div className="h-[0.5px] w-6 md:w-8 bg-white/40"></div>
+              {/* Text Overlays Above Image */}
+              <div className="flex justify-between items-center mb-1 md:mb-2 px-1 md:px-2">
+                <span className="text-white/65 text-[9px] md:text-xs font-sans uppercase tracking-[0.3em] font-light">ALIGNED</span>
+                <span className="text-white/65 text-[9px] md:text-xs font-sans uppercase tracking-[0.3em] font-light">TRANSFORM</span>
               </div>
-              <span className="text-white/65 text-[9px] md:text-xs font-sans uppercase tracking-[0.3em] font-light">RENEW</span>
-            </div>
+
+              {/* Main Image */}
+              <div className="relative flex justify-center">
+                <img
+                  src={servicesPhoto2}
+                  alt="Sound Healing Session"
+                  className="object-contain"
+                  style={{ borderRadius: "2px", maxWidth: "95%", maxHeight: "450px" }}
+                />
+              </div>
+
+              {/* Text Overlays Below Image */}
+              <div className="flex justify-between items-center mt-1 md:mt-2 px-1 md:px-2">
+                <span className="text-white/65 text-[9px] md:text-xs font-sans uppercase tracking-[0.3em] font-light">HEAL</span>
+                <div className="flex items-center gap-1 md:gap-2">
+                  <div className="h-[0.5px] w-6 md:w-8 bg-white/40"></div>
+                  <span className="text-white/65 text-[9px] md:text-xs font-sans uppercase tracking-[0.3em] font-light">MANIFEST</span>
+                  <div className="h-[0.5px] w-6 md:w-8 bg-white/40"></div>
+                </div>
+                <span className="text-white/65 text-[9px] md:text-xs font-sans uppercase tracking-[0.3em] font-light">RENEW</span>
+              </div>
             </div>
           </div>
         </div>
-        
+
         {/* Spacer for image overflow */}
         <div className="pt-[200px] md:pt-[250px] pb-4 md:pb-6"></div>
       </div>

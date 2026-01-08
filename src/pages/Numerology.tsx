@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Navigation from "@/components/Navigation";
+import Navigation from "@/components/layout/Navigation";
 import numerologyImg from "@/assets/numerology.jpg";
 import bookImg from "@/assets/numerology.jpg";
 import diceImg from "@/assets/dice.png";
@@ -83,8 +83,8 @@ const Numerology = () => {
               src={diceImg}
               alt="Dice"
               className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] object-contain shadow-[0_20px_40px_rgba(0,0,0,0.9)]"
-              style={{ 
-                transform: "rotate(12deg)", 
+              style={{
+                transform: "rotate(12deg)",
                 backgroundColor: "transparent",
                 border: "none",
                 outline: "none",
@@ -99,8 +99,8 @@ const Numerology = () => {
               src={diceImg}
               alt="Dice"
               className="w-48 h-48 sm:w-56 sm:h-56 object-contain opacity-90"
-              style={{ 
-                transform: "rotate(12deg)", 
+              style={{
+                transform: "rotate(12deg)",
                 backgroundColor: "transparent",
                 border: "none",
                 outline: "none",
@@ -111,8 +111,8 @@ const Numerology = () => {
               src={diceImg}
               alt="Dice"
               className="w-48 h-48 sm:w-56 sm:h-56 object-contain opacity-90"
-              style={{ 
-                transform: "rotate(-12deg)", 
+              style={{
+                transform: "rotate(-12deg)",
                 backgroundColor: "transparent",
                 border: "none",
                 outline: "none",
@@ -164,8 +164,8 @@ const Numerology = () => {
                   src={diceImg}
                   alt="Dice"
                   className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] object-contain shadow-[0_20px_40px_rgba(0,0,0,0.9)]"
-                  style={{ 
-                    transform: "rotate(-12deg)", 
+                  style={{
+                    transform: "rotate(-12deg)",
                     backgroundColor: "transparent",
                     border: "none",
                     outline: "none",

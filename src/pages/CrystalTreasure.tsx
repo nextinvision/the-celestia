@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Navigation from "@/components/Navigation";
+import Navigation from "@/components/layout/Navigation";
 import servicesPhoto2 from "@/assets/img5.jpg"; // Using existing image as placeholder
 import crystalsImage from "@/assets/crystals.jpg";
 import goldenImage from "@/assets/golden.jpg";
@@ -15,7 +15,7 @@ const CrystalTreasure = () => {
   return (
     <div className="min-h-screen relative">
       <Navigation />
-      
+
       {/* Hero Banner Section - Full Width */}
       <section className="relative w-full h-screen overflow-hidden">
         {/* Background Image with Blur */}
@@ -27,19 +27,19 @@ const CrystalTreasure = () => {
             transform: "scale(1.1)",
           }}
         ></div>
-        
+
         {/* Dark Overlay for better text contrast - Earthy tones */}
-        <div 
+        <div
           className="absolute inset-0"
           style={{
             background: "linear-gradient(to bottom, rgba(30, 25, 20, 0.5) 0%, rgba(40, 35, 30, 0.4) 50%, rgba(25, 20, 15, 0.6) 100%)",
           }}
         ></div>
-        
+
         {/* Main Content - Centered with button slightly to the right */}
         <div className="relative h-full flex flex-col items-center justify-center px-4 sm:px-6 z-10" style={{ transform: "translateY(-30px)" }}>
           {/* Main Headline - Centered horizontally */}
-          <h1 
+          <h1
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif text-white font-light text-center leading-tight mb-3 sm:mb-4 md:mb-5"
             style={{
               textShadow: "0 2px 10px rgba(0, 0, 0, 0.5)",
@@ -49,9 +49,9 @@ const CrystalTreasure = () => {
           >
             CRYSTALS FOR RADIANT LIVING
           </h1>
-          
+
           {/* Sub-headline - Directly below main headline */}
-          <p 
+          <p
             className="text-xs sm:text-sm md:text-base lg:text-lg text-white/90 font-light text-center mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto"
             style={{
               textShadow: "0 1px 5px rgba(0, 0, 0, 0.5)",
@@ -61,7 +61,7 @@ const CrystalTreasure = () => {
           >
             Make a statement. Make a difference. Make it yours.
           </p>
-          
+
           {/* BOOK SESSION Button - Slightly to the right of center */}
           <div className="flex justify-center" style={{ transform: "translateX(5%)" }}>
             <button
@@ -91,7 +91,7 @@ const CrystalTreasure = () => {
       </section>
 
       {/* BESTSELLERS Section */}
-      <section 
+      <section
         className="relative w-full py-12 md:py-16 px-4 sm:px-6"
         style={{
           background: "linear-gradient(135deg, #E6F2FF 0%, #D6E9F5 50%, #E0F0FF 100%)",
@@ -100,7 +100,7 @@ const CrystalTreasure = () => {
         }}
       >
         {/* Sparkle/Cloud Effect Background */}
-        <div 
+        <div
           className="absolute inset-0 opacity-30"
           style={{
             backgroundImage: `
@@ -116,13 +116,13 @@ const CrystalTreasure = () => {
 
         <div className="max-w-7xl mx-auto relative z-10">
           {/* BESTSELLERS Title */}
-          <h2 
+          <h2
             className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#1a1a1a] font-bold text-left mb-3 md:mb-4"
             style={{ letterSpacing: "0.02em" }}
           >
             BESTSELLERS
           </h2>
-          
+
           {/* Subtitle */}
           <p className="text-sm md:text-base lg:text-lg text-[#333] font-sans text-left mb-8 md:mb-12">
             Our best selling courses and tarot cards are back in stock!
@@ -133,9 +133,9 @@ const CrystalTreasure = () => {
             {/* Product Card 1 - Golden Quartz */}
             <div className="bg-white overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <div className="aspect-[4/5] bg-gray-100 overflow-hidden">
-                <img 
-                  src={goldenImage} 
-                  alt="Golden Quartz" 
+                <img
+                  src={goldenImage}
+                  alt="Golden Quartz"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -147,9 +147,9 @@ const CrystalTreasure = () => {
             {/* Product Card 2 - Sapphire */}
             <div className="bg-white overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <div className="aspect-[4/5] bg-gray-100 overflow-hidden">
-                <img 
-                  src={sapphireImage} 
-                  alt="Sapphire" 
+                <img
+                  src={sapphireImage}
+                  alt="Sapphire"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -161,9 +161,9 @@ const CrystalTreasure = () => {
             {/* Product Card 3 - Pink Amethyst */}
             <div className="bg-white overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <div className="aspect-[4/5] bg-gray-100 overflow-hidden">
-                <img 
-                  src={pinkImage} 
-                  alt="Pink Amethyst" 
+                <img
+                  src={pinkImage}
+                  alt="Pink Amethyst"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -175,9 +175,9 @@ const CrystalTreasure = () => {
             {/* Product Card 4 - Fluorite */}
             <div className="bg-white overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <div className="aspect-[4/5] bg-gray-100 overflow-hidden">
-                <img 
-                  src={fluoriteImage} 
-                  alt="Fluorite" 
+                <img
+                  src={fluoriteImage}
+                  alt="Fluorite"
                   className="w-full h-full object-cover"
                 />
               </div>

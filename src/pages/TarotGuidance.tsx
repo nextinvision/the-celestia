@@ -1,5 +1,5 @@
 import { useEffect, useMemo } from "react";
-import Navigation from "@/components/Navigation";
+import Navigation from "@/components/layout/Navigation";
 import tarotCards from "@/assets/tarot-cards.jpg";
 
 // Seeded random function for consistent star positions
@@ -14,7 +14,7 @@ const TarotGuidance = () => {
   }, []);
 
   // Generate fixed star positions
-  const whiteStars = useMemo(() => 
+  const whiteStars = useMemo(() =>
     Array.from({ length: 60 }).map((_, i) => ({
       width: seededRandom(i) * 2 + 1,
       height: seededRandom(i) * 2 + 1,
@@ -24,7 +24,7 @@ const TarotGuidance = () => {
     })), []
   );
 
-  const yellowStars = useMemo(() => 
+  const yellowStars = useMemo(() =>
     Array.from({ length: 20 }).map((_, i) => ({
       width: seededRandom(i + 400) * 1.5 + 0.5,
       height: seededRandom(i + 400) * 1.5 + 0.5,
@@ -182,9 +182,9 @@ const TarotGuidance = () => {
             <div className="relative w-[90vw] sm:w-[85vw] max-w-[400px] sm:max-w-[500px] md:max-w-[600px] aspect-square">
               {/* Large Circle Outline */}
               <div className="absolute inset-0 border border-[#FFD700] rounded-full" style={{ borderWidth: "1px" }} />
-              
+
               {/* Large Triangle Overlay - Equilateral triangle with vertices touching circle */}
-              <svg 
+              <svg
                 className="absolute inset-0 w-full h-full"
                 viewBox="0 0 100 100"
                 preserveAspectRatio="none"
