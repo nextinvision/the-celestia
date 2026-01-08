@@ -73,13 +73,13 @@ const ServicesSection = () => {
 
   return (
     <div className='min-h-screen bg-[#FDFCFA] flex flex-col items-center justify-center p-6 sm:p-8 md:p-12 relative overflow-hidden'>
-      {/* Star Decorations Top Right */}
-      <div className="absolute top-0 right-0 w-24 sm:w-32 md:w-40 lg:w-48 opacity-50 pointer-events-none">
+      {/* Stars Top */}
+      <div className="absolute top-0 right-0 w-40 sm:w-48 md:w-56 lg:w-72 opacity-80 pointer-events-none z-0">
         <img src={starsTop} alt="" className="w-full h-auto" />
       </div>
 
-      {/* Star Decorations Bottom Left */}
-      <div className="absolute bottom-0 left-0 w-24 sm:w-32 md:w-40 lg:w-48 opacity-50 pointer-events-none">
+      {/* Stars Bottom */}
+      <div className="absolute bottom-0 left-0 w-40 sm:w-48 md:w-56 lg:w-72 opacity-80 pointer-events-none z-0">
         <img src={starsBottom} alt="" className="w-full h-auto" />
       </div>
 
@@ -139,47 +139,49 @@ const ServicesSection = () => {
                     className="flex flex-col items-center cursor-pointer transition-transform duration-300 hover:scale-105"
                     onClick={() => navigate(service.route)}
                   >
-                    {/* Card Container */}
-                    <div className="relative w-full max-w-sm">
-                      {/* Image Card with Colored Frame */}
+                    {/* Individual Card Container */}
+                    <div className="relative w-full max-w-sm mt-12">
+                      {/* Golden Banner - Individual for each card */}
                       <div
-                        className="p-4 sm:p-5 md:p-6 shadow-lg w-full"
-                        style={{ backgroundColor: bgColor }}
+                        className="absolute top-[-20px] left-[10%] right-[10%] z-10"
+                        style={{
+                          background: 'linear-gradient(145deg, #8E6A48 0%, #C49B63 35%, #E6C183 65%, #B08859 100%)',
+                          boxShadow: '0 4px 12px rgba(142, 106, 72, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
+                          clipPath: 'polygon(3% 0%, 97% 0%, 100% 25%, 100% 75%, 97% 100%, 3% 100%, 0% 75%, 0% 25%)'
+                        }}
                       >
-                        <div
-                          className="border-4 overflow-hidden aspect-[3/4]"
+                        <h3
+                          className="text-center text-white font-bold text-sm sm:text-base md:text-lg py-3 px-3"
                           style={{
-                            borderColor: index === 0 ? '#4A9ECC' : '#8B6F47'
+                            textShadow: '0 2px 4px rgba(0,0,0,0.3)'
                           }}
                         >
+                          {service.name}
+                        </h3>
+                      </div>
+
+                      {/* Card with Colored Frame */}
+                      <div
+                        className="w-full p-5 sm:p-6 md:p-7 shadow-xl relative"
+                        style={{ backgroundColor: bgColor }}
+                      >
+                        {/* Image without border */}
+                        <div className="overflow-hidden aspect-[3/4]">
                           <img
                             src={service.image}
                             alt={service.name}
                             className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                           />
                         </div>
-                      </div>
 
-                      {/* Golden Banner - Positioned on top of card */}
-                      <div
-                        className="absolute top-0 left-0 right-0 px-8 mt-[-15px]"
-                      >
-                        <div
-                          className="relative"
-                          style={{
-                            background: 'linear-gradient(145deg, #8E6A48 0%, #C49B63 35%, #E6C183 65%, #B08859 100%)',
-                            boxShadow: '0 4px 12px rgba(142, 106, 72, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
-                            clipPath: 'polygon(5% 0%, 95% 0%, 100% 15%, 100% 85%, 95% 100%, 5% 100%, 0% 85%, 0% 15%)'
-                          }}
-                        >
-                          <h3
-                            className="text-center text-white font-bold text-base sm:text-lg md:text-xl py-3 px-4"
-                            style={{
-                              textShadow: '0 2px 4px rgba(0,0,0,0.3)'
-                            }}
-                          >
-                            {service.name}
-                          </h3>
+                        {/* Decorative dots at bottom */}
+                        <div className="absolute bottom-3 left-4 flex gap-2">
+                          <div className="w-2 h-2 rounded-full bg-[#8B6F47] opacity-60"></div>
+                          <div className="w-2 h-2 rounded-full bg-[#8B6F47] opacity-60"></div>
+                        </div>
+                        <div className="absolute bottom-3 right-4 flex gap-2">
+                          <div className="w-2 h-2 rounded-full bg-[#8B6F47] opacity-60"></div>
+                          <div className="w-2 h-2 rounded-full bg-[#8B6F47] opacity-60"></div>
                         </div>
                       </div>
                     </div>
