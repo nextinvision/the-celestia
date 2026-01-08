@@ -67,8 +67,9 @@ export default {
         sans: ["Inter", "sans-serif"],
         script: ["Dancing Script", "cursive"],
         waterfall: ["Waterfall", "cursive"], // <-- added here
-         jeju: ['Jeju Myeonjo', 'cursive'], // <- added here
-         gideon: ['Gideon Roman', 'serif'], // <- added here
+        jeju: ['Jeju Myeonjo', 'cursive'], // <- added here
+        gideon: ['Gideon Roman', 'serif'], // <- added here
+        waterbrush: ['Waterbrush', 'cursive'], // <- added here
       },
 
       borderRadius: {

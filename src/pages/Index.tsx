@@ -8,16 +8,18 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/layout/Footer";
 import PowefulSection from "@/components/PowefulSection";
-
+import Events from "@/components/Events";
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
       <HeroSection />
       <AboutSection />
-      <PodcastSection />
+      
       <ServicesSection />
-      <EventsSection />
+      {/* <EventsSection /> */}
+      <Events />
+      <PodcastSection />
       <TestimonialsSection />
       {/* <ContactSection /> */}
       <PowefulSection />

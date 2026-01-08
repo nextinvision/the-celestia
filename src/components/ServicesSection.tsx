@@ -1,6 +1,13 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import bgforabout from "@/assets/bgabou.png";
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import soundhealing from "@/assets/soundhealing.jpg"
+import reiki from "@/assets/reiki.png"
+import numerology from "@/assets/numer.jpg"
+import tarotCards from "@/assets/tarot-cards.jpg"
+import crystals from "@/assets/crystals.jpg"
+import intuitivecoaching from "@/assets/coaching.jpg"
+import starsTop from "@/assets/servicestarstop.png"
+import starsBottom from "@/assets/servicesstarsbottom.png"
 import {
   Carousel,
   CarouselContent,
@@ -8,45 +15,44 @@ import {
   CarouselNext,
   CarouselPrevious,
   type CarouselApi,
-} from "@/components/ui/carousel";
-import soundhealing from "@/assets/soundhealing.jpg";
-import reiki from "@/assets/reiki.png";
-import numerology from "@/assets/numer.jpg";
-import tarotCards from "@/assets/tarot-cards.jpg";
-import crystals from "@/assets/crystals.jpg";
-import intuitivecoaching from "@/assets/coaching.jpg";
+} from "@/components/ui/carousel"
 
 const services = [
   {
-    name: "Tarot Guidance",
+    name: "Sound Healing",
     description: "Discover clarity through ancient wisdom",
-    image: tarotCards,
+    image: soundhealing,
+    route: "/sound-healing"
   },
   {
     name: "Reiki & Multi Modality Healing",
     description: "Restore balance through energy healing",
     image: reiki,
-  },
-  {
-    name: "Numerology",
-    description: "Unlock the power of numbers in your life",
-    image: numerology,
-  },
-  {
-    name: "Sound Healing",
-    description: "Harmonize your energy with vibrational therapy",
-    image: soundhealing,
-  },
-  
-  {
-    name: "Intuitive Coaching",
-    description: "Navigate life with intuitive guidance",
-    image: intuitivecoaching,
+    route: "/reiki"
   },
   {
     name: "Crystal Treasure",
     description: "Harness the energy of sacred crystals",
     image: crystals,
+    route: "/crystal-treasure"
+  },
+  {
+    name: "Tarot Guidance",
+    description: "Unlock the power of numbers in your life",
+    image: tarotCards,
+    route: "/tarot-guidance"
+  },
+  {
+    name: "Numerology",
+    description: "Harmonize your energy with vibrational therapy",
+    image: numerology,
+    route: "/numerology"
+  },
+  {
+    name: "Intuitive Coaching",
+    description: "Navigate life with intuitive guidance",
+    image: intuitivecoaching,
+    route: "/intuitive-coaching"
   },
 ];
 
@@ -54,292 +60,141 @@ const ServicesSection = () => {
   const navigate = useNavigate();
   const [api, setApi] = useState<CarouselApi>();
 
+  // Auto-play carousel
+  useEffect(() => {
+    if (!api) return;
+
+    const intervalId = setInterval(() => {
+      api.scrollNext();
+    }, 4000); // Change slide every 4 seconds
+
+    return () => clearInterval(intervalId);
+  }, [api]);
+
   return (
-    <section id="services" className="w-full bg-[#FFF4E1] py-6 sm:py-8 md:py-12 relative overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-       
-      ></div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="w-full flex justify-center">
-          {/* Carousel with service cards */}
-          <div className="w-full relative max-w-6xl mx-auto">
-            <Carousel
-              setApi={setApi}
-              opts={{
-                align: "center",
-                loop: true,
-              }}
-              className="w-full"
-            >
-              <CarouselContent className="-ml-2 md:-ml-4">
-                {services.map((service, i) => (
-                  <CarouselItem key={i} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 min-w-0 flex justify-center">
-                    <div className="flex-1 bg-transparent flex flex-col h-full w-full max-w-[170px] sm:max-w-[220px] md:max-w-[280px]">
-                      <figure className="w-full flex flex-col h-full">
-                        {/* Container with arched top using SVG clip-path */}
+    <div className='min-h-screen bg-[#FDFCFA] flex flex-col items-center justify-center p-6 sm:p-8 md:p-12 relative overflow-hidden'>
+      {/* Star Decorations Top Right */}
+      <div className="absolute top-0 right-0 w-24 sm:w-32 md:w-40 lg:w-48 opacity-50 pointer-events-none">
+        <img src={starsTop} alt="" className="w-full h-auto" />
+      </div>
+
+      {/* Star Decorations Bottom Left */}
+      <div className="absolute bottom-0 left-0 w-24 sm:w-32 md:w-40 lg:w-48 opacity-50 pointer-events-none">
+        <img src={starsBottom} alt="" className="w-full h-auto" />
+      </div>
+
+      {/* Scattered Star Symbols */}
+      <div className="absolute top-1/4 left-12 text-4xl text-[#856654] opacity-40">✦</div>
+      <div className="absolute top-1/3 right-20 text-3xl text-[#856654] opacity-35">✦</div>
+      <div className="absolute bottom-1/3 left-1/4 text-2xl text-[#856654] opacity-30">✦</div>
+      <div className="absolute bottom-1/4 right-1/3 text-3xl text-[#856654] opacity-35">✦</div>
+
+      {/* Plus/Cross Symbols */}
+      <div className="absolute top-20 left-20 text-2xl text-[#856654] opacity-25">+</div>
+      <div className="absolute top-1/2 left-10 text-xl text-[#856654] opacity-20">+</div>
+      <div className="absolute bottom-32 right-16 text-2xl text-[#856654] opacity-25">+</div>
+      <div className="absolute bottom-20 left-1/3 text-xl text-[#856654] opacity-20">+</div>
+
+      <div className="container max-w-7xl mx-auto relative z-10">
+        {/* Header Banner */}
+        <div className="mb-12 md:mb-16">
+          <div className="bg-[#856654] text-white px-6 sm:px-8 md:px-12 py-6 sm:py-8 md:py-10 rounded-lg shadow-xl max-w-5xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light mb-4">
+              let's cut to the chase...
+            </h2>
+            <div className="space-y-2 text-xs sm:text-sm md:text-base opacity-90 leading-relaxed">
+              <p>
+                I'm a paragraph. Click here to add your own text and edit me. It's easy. I'm a paragraph. Click here to add your own text and edit me.
+              </p>
+              <p>
+                It's easy. I'm a paragraph. Click here to add your own text and edit me. It's easy.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Choose Your Service Heading */}
+        <h1 className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-waterbrush italic text-[#856654] mb-12 md:mb-16">
+          Choose Your Service
+        </h1>
+
+        {/* Carousel - Show 3 at a time */}
+        <Carousel
+          setApi={setApi}
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full max-w-6xl mx-auto"
+        >
+          <CarouselContent className="-ml-4">
+            {services.map((service, index) => {
+              // Cycle through 3 colors
+              const colors = ['#856654', '#D0BDAC', '#E9E2DC'];
+              const bgColor = colors[index % 3];
+
+              return (
+                <CarouselItem key={index} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                  <div
+                    className="flex flex-col items-center cursor-pointer transition-transform duration-300 hover:scale-105"
+                    onClick={() => navigate(service.route)}
+                  >
+                    {/* Card Container */}
+                    <div className="relative w-full max-w-sm">
+                      {/* Image Card with Colored Frame */}
+                      <div
+                        className="p-4 sm:p-5 md:p-6 shadow-lg w-full"
+                        style={{ backgroundColor: bgColor }}
+                      >
                         <div
-                          className="w-full block relative overflow-hidden service-image-container flex-shrink-0"
-                          style={{ 
-                            height: "430px",
-                            aspectRatio: "auto"
+                          className="border-4 overflow-hidden aspect-[3/4]"
+                          style={{
+                            borderColor: index === 0 ? '#4A9ECC' : '#8B6F47'
                           }}
                         >
-                          <svg
-                            width="0"
-                            height="0"
-                            style={{ position: "absolute" }}
-                          >
-                            <defs>
-                              <clipPath
-                                id={`archClip-${i}`}
-                                clipPathUnits="objectBoundingBox"
-                              >
-                                <path d="M0,1 V0.35 A0.5,0.35 0 0 1 1,0.35 V1 Z" />
-                              </clipPath>
-                            </defs>
-                          </svg>
                           <img
                             src={service.image}
                             alt={service.name}
-                            className="w-full h-full object-cover"
-                            style={{
-                              clipPath: `url(#archClip-${i})`,
-                            }}
+                            className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                           />
                         </div>
+                      </div>
 
-                        {/* Text below image */}
-                        <figcaption className="mt-4 text-center flex flex-col flex-1 min-h-[160px] sm:min-h-[180px]">
-                          <div className="flex-shrink-0">
-                            <div className="text-xs sm:text-xs text-[#A37F76] tracking-widest font-semibold uppercase">
-                              {service.name.split(" ")[0]}
-                            </div>
-                            <div className="mt-1 text-base sm:text-lg md:text-xl font-serif text-[#3A1D0F] font-bold">
-                              {service.name}
-                            </div>
-                            <div className="mt-2 text-xs sm:text-sm text-[#5C4330] italic px-2 sm:px-0">
-                              {service.description}
-                            </div>
-                          </div>
-                          {/* Read More Button with Gate Shape */}
-                          <button
-  className="mt-auto relative gate-shape-button group mx-auto block flex-shrink-0 overflow-hidden"
-  aria-label="Read more about this service"
-  style={{
-    clipPath:
-      "polygon(12% 0%, 88% 0%, 100% 10%, 100% 90%, 88% 100%, 12% 100%, 0% 90%, 0% 10%)",
-    padding: "8px 20px",
-    border: "none",
-    cursor: "pointer",
-    transition: "transform 220ms ease, box-shadow 220ms ease",
-    position: "relative",
-    background: "transparent",
-  }}
-  onClick={() => {
-    if (service.name === "Tarot Guidance") {
-      navigate("/tarot-guidance");
-    } else if (service.name === "Numerology") {
-      navigate("/numerology");
-    } else if (service.name === "Sound Healing") {
-      navigate("/sound-healing");
-    } else if (service.name === "Reiki & Multi Modality Healing") {
-      navigate("/reiki");
-    } else if (service.name === "Intuitive Coaching") {
-      navigate("/intuitive-coaching");
-    } else if (service.name === "Crystal Treasure") {
-      navigate("/crystal-treasure");
-    }
-  }}
-  onMouseEnter={(e) => {
-    e.currentTarget.style.transform = "translateY(-4px)";
-    e.currentTarget.style.boxShadow =
-      "0 12px 36px rgba(180,140,90,0.32), 0 0 45px rgba(255,210,140,0.18)";
-  }}
-  onMouseLeave={(e) => {
-    e.currentTarget.style.transform = "translateY(0)";
-    e.currentTarget.style.boxShadow =
-      "0 8px 24px rgba(180,140,90,0.18), 0 0 28px rgba(255,210,140,0.10)";
-  }}
->
-  {/* Deeper gold-bronze base */}
-  <div
-    aria-hidden
-    className="absolute inset-0"
-    style={{
-      background:
-        "linear-gradient(135deg, #8E6A48 0%, #C49B63 35%, #E6C183 65%, #B08859 100%)",
-      zIndex: 0,
-    }}
-  />
-
-  {/* Metallic sheen layer */}
-  <div
-    aria-hidden
-    className="absolute inset-0"
-    style={{
-      background:
-        "linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.20) 100%)",
-      mixBlendMode: "overlay",
-      zIndex: 1,
-    }}
-  />
-
-  {/* Stronger golden shimmer */}
-  <div
-    aria-hidden
-    className="absolute inset-0"
-    style={{
-      background:
-        "linear-gradient(90deg, transparent 0%, rgba(255,230,160,0.45) 25%, rgba(255,240,180,0.70) 50%, rgba(255,230,160,0.45) 75%, transparent 100%)",
-      backgroundSize: "220% 100%",
-      animation: "goldenSweep 2.4s linear infinite",
-      opacity: 0.75,
-      transform: "skewX(-20deg)",
-      zIndex: 2,
-    }}
-  />
-
-  {/* Soft golden inner glow */}
-  <div
-    aria-hidden
-    className="absolute inset-0"
-    style={{
-      background:
-        "radial-gradient(circle at center, rgba(255,215,160,0.35) 0%, transparent 60%)",
-      zIndex: 1,
-      mixBlendMode: "screen",
-      animation: "goldenPulse 4s ease-in-out infinite",
-    }}
-  />
-
-  {/* Hover flash */}
-  <div
-    aria-hidden
-    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-    style={{
-      background:
-        "linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.45) 50%, rgba(255,255,255,0.25) 100%)",
-      transform: "skewX(-15deg)",
-      zIndex: 3,
-    }}
-  />
-
-  {/* Text */}
-  <span
-    className="relative z-10 text-white font-semibold text-xs sm:text-sm uppercase tracking-wide drop-shadow-md"
-    style={{
-      textShadow: "0 0 6px rgba(255,195,120,0.75)",
-    }}
-  >
-    Read More
-  </span>
-
-  <style>
-    {`
-      @keyframes goldenSweep {
-        0% { background-position: -150% 0; }
-        100% { background-position: 150% 0; }
-      }
-
-      @keyframes goldenPulse {
-        0% { opacity: 0.40; transform: scale(1); }
-        50% { opacity: 0.65; transform: scale(1.025); }
-        100% { opacity: 0.40; transform: scale(1); }
-      }
-    `}
-  </style>
-</button>
-
-                        </figcaption>
-                      </figure>
+                      {/* Golden Banner - Positioned on top of card */}
+                      <div
+                        className="absolute top-0 left-0 right-0 px-8 mt-[-15px]"
+                      >
+                        <div
+                          className="relative"
+                          style={{
+                            background: 'linear-gradient(145deg, #8E6A48 0%, #C49B63 35%, #E6C183 65%, #B08859 100%)',
+                            boxShadow: '0 4px 12px rgba(142, 106, 72, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
+                            clipPath: 'polygon(5% 0%, 95% 0%, 100% 15%, 100% 85%, 95% 100%, 5% 100%, 0% 85%, 0% 15%)'
+                          }}
+                        >
+                          <h3
+                            className="text-center text-white font-bold text-base sm:text-lg md:text-xl py-3 px-4"
+                            style={{
+                              textShadow: '0 2px 4px rgba(0,0,0,0.3)'
+                            }}
+                          >
+                            {service.name}
+                          </h3>
+                        </div>
+                      </div>
                     </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 bg-[#B48B80] text-white border-none hover:bg-[#A37F76] z-10 h-8 w-8 sm:h-10 sm:w-10" />
-              <CarouselNext className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 bg-[#B48B80] text-white border-none hover:bg-[#A37F76] z-10 h-8 w-8 sm:h-10 sm:w-10" />
-            </Carousel>
-          </div>
-        </div>
+                  </div>
+                </CarouselItem>
+              )
+            }
+            )}
+          </CarouselContent>
+          <CarouselPrevious className="left-2 bg-[#856654] text-white border-none hover:bg-[#6B5243]" />
+          <CarouselNext className="right-2 bg-[#856654] text-white border-none hover:bg-[#6B5243]" />
+        </Carousel>
       </div>
+    </div>
+  )
+}
 
-      {/* Golden Particles */}
-      <div
-        className="golden-particle golden-particle-medium"
-        style={{ top: "8%", left: "5%", animationDelay: "0s" }}
-      ></div>
-      <div
-        className="golden-particle golden-particle-small golden-particle-float"
-        style={{ top: "25%", right: "10%", animationDelay: "2s" }}
-      ></div>
-      <div
-        className="golden-particle golden-particle-small golden-particle-drift"
-        style={{ bottom: "20%", left: "8%", animationDelay: "1.5s" }}
-      ></div>
-      <div
-        className="golden-particle golden-particle-medium"
-        style={{ top: "50%", right: "5%", animationDelay: "0.7s" }}
-      ></div>
-      <div
-        className="golden-particle golden-particle-small"
-        style={{ top: "35%", left: "12%", animationDelay: "1s" }}
-      ></div>
-      <div
-        className="golden-particle golden-particle-small"
-        style={{ bottom: "30%", right: "15%", animationDelay: "2.5s" }}
-      ></div>
-
-      {/* Responsive styles and animations */}
-      <style>{`
-        
-        /* Maintain gate shape proportions across all screen sizes */
-        /* The clip-path uses objectBoundingBox units (0-1) so it scales proportionally */
-        @media (max-width: 640px) {
-          .service-image-container {
-            height: 300px !important;
-            min-height: 300px !important;
-          }
-          .gate-shape-button {
-            padding: 8px 20px !important;
-          }
-        }
-        @media (min-width: 641px) and (max-width: 768px) {
-          .service-image-container {
-            height: 380px !important;
-            min-height: 380px !important;
-          }
-          .gate-shape-button {
-            padding: 10px 24px !important;
-          }
-        }
-        @media (min-width: 769px) {
-          .service-image-container {
-            height: 430px !important;
-            min-height: 430px !important;
-          }
-          .gate-shape-button {
-            padding: 10px 28px !important;
-          }
-        }
-        
-        /* Ensure clip-path is properly applied on all devices */
-        .service-image-container img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
-        }
-        
-        /* Touch-friendly interactions for mobile */
-        @media (max-width: 640px) {
-          .gate-shape-button:active {
-            transform: translateY(-2px) !important;
-          }
-        }
-      `}</style>
-    </section>
-  );
-};
-
-export default ServicesSection;
+export default ServicesSection

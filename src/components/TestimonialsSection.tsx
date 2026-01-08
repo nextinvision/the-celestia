@@ -80,9 +80,9 @@ const TestimonialsSection = () => {
 
 
   return (
-    <section className="relative bg-[#f3ede7] py-12 sm:py-16 md:py-24 overflow-hidden md:overflow-visible flex justify-center items-center">
+    <section className="relative bg-[#FDFCFA] py-8 sm:py-10 md:py-12 overflow-hidden md:overflow-visible flex justify-center items-center">
       {/* Feedback Background Image */}
-      <div
+      {/* <div
         className="absolute inset-0 pointer-events-none z-0"
         style={{
           backgroundImage: `url(${feedbackBg})`,
@@ -91,11 +91,11 @@ const TestimonialsSection = () => {
           backgroundRepeat: "no-repeat",
           opacity: 1,
         }}
-      ></div>
+      ></div> */}
 
       {/* ===== Square Shape with feedbackclientbg.png (outside card) ===== */}
-      <div 
-        className="absolute z-0 w-[300px] h-[250px] sm:w-[400px] sm:h-[350px] md:w-[600px] md:h-[500px] lg:w-[650px] lg:h-[570px] pointer-events-none hidden md:block"
+      <div
+        className="absolute z-0 w-[150px] h-[150px] sm:w-[250px] sm:h-[200px] md:w-[400px] md:h-[400px] lg:w-[250px] lg:h-[250px] pointer-events-none hidden md:block"
         style={{
           backgroundImage: `url(${feedbackClientBg})`,
           backgroundSize: "cover",
@@ -120,40 +120,39 @@ const TestimonialsSection = () => {
         <CarouselContent>
           {testimonials.map((testimonial, i) => (
             <CarouselItem key={i} className="basis-full">
-              <div 
-                className={`relative flex justify-center items-center testimonial-fade ${
-                  current === i ? "fade-in" : "fade-out"
-                }`}
+              <div
+                className={`relative flex justify-center items-center testimonial-fade ${current === i ? "fade-in" : "fade-out"
+                  }`}
               >
                 {/* ===== Foreground Card ===== */}
-                <div className="relative z-10 bg-[#fcf9f7] shadow-xl rounded-md w-[90%] sm:w-[85%] md:w-[75%] lg:w-[60%] flex flex-col md:flex-row items-center md:items-center p-4 sm:p-6 md:p-10 overflow-visible md:overflow-visible">
+                <div className="relative z-10 bg-[#fcf9f7] shadow-xl rounded-md w-[90%] sm:w-[85%] md:w-[75%] lg:w-[60%] flex flex-col md:flex-row items-center md:items-center p-3 sm:p-4 md:p-6 overflow-visible md:overflow-visible">
                   {/* === Left Image (Oval Capsule Shape) === */}
-                  <div className="relative md:-ml-32 lg:-ml-44 mt-0 md:mt-0 flex-shrink-0">
-                    <div className="w-[150px] h-[220px] sm:w-[180px] sm:h-[260px] md:w-[220px] md:h-[320px] lg:w-[260px] lg:h-[380px] rounded-[140px] overflow-hidden shadow-xl bg-white golden-border-solid border-shimmer p-2">
+                  <div className="relative md:-ml-24 lg:-ml-32 mt-0 md:mt-0 flex-shrink-0">
+                    <div className="w-[120px] h-[180px] sm:w-[140px] sm:h-[200px] md:w-[160px] md:h-[240px] lg:w-[180px] lg:h-[270px] rounded-[100px] overflow-hidden shadow-xl bg-white golden-border-solid border-shimmer p-2">
                       <img
                         src={testimonial.image}
                         alt={testimonial.name}
-                        className="w-full h-full object-cover rounded-[140px]"
+                        className="w-full h-full object-cover rounded-[100px]"
                       />
                     </div>
                   </div>
 
                   {/* === Right Text Content === */}
-                  <div className="md:ml-6 lg:ml-10 mt-4 sm:mt-6 md:mt-0 text-center md:text-left max-w-full md:max-w-[600px]">
-                    <h2 className="text-[1.4rem] sm:text-[1.6rem] md:text-[1.8rem] lg:text-[2rem] font-serif text-[#1a1a1a] mb-3 sm:mb-4 text-shimmer">
+                  <div className="md:ml-4 lg:ml-6 mt-3 sm:mt-4 md:mt-0 text-center md:text-left max-w-full md:max-w-[600px]">
+                    <h2 className="text-[1.2rem] sm:text-[1.3rem] md:text-[1.4rem] lg:text-[1.5rem] font-serif text-[#1a1a1a] mb-2 sm:mb-3 text-shimmer">
                       HAPPY CLIENTS
                     </h2>
 
-                    <h3 className="text-[1rem] sm:text-[1.05rem] md:text-[1.1rem] lg:text-[1.25rem] font-semibold text-[#222] mb-2 sm:mb-3 glow-shimmer">
+                    <h3 className="text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] lg:text-[1.1rem] font-semibold text-[#222] mb-1 sm:mb-2 glow-shimmer">
                       {testimonial.title}
                     </h3>
 
-                    <p className="text-[#444] leading-relaxed text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] italic mb-3 sm:mb-4">
+                    <p className="text-[#444] leading-relaxed text-[0.8rem] sm:text-[0.85rem] md:text-[0.9rem] italic mb-2 sm:mb-3">
                       "{testimonial.text}"
                     </p>
 
                     {/* === Star rating === */}
-                    <div className="flex justify-center md:justify-start text-[#f6c744] text-[0.9rem] sm:text-[1rem] md:text-[1.1rem] mb-2 glow-shimmer">
+                    <div className="flex justify-center md:justify-start text-[#f6c744] text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] mb-1 sm:mb-2 glow-shimmer">
                       {Array.from({ length: testimonial.rating }).map(
                         (_, idx) => (
                           <span key={idx}>★</span>
@@ -162,7 +161,7 @@ const TestimonialsSection = () => {
                     </div>
 
                     <div>
-                      <p className="font-semibold text-[#222] text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem]">
+                      <p className="font-semibold text-[#222] text-[0.8rem] sm:text-[0.85rem] md:text-[0.9rem]">
                         {testimonial.name}
                       </p>
                       <p className="text-xs sm:text-sm text-[#777]">{testimonial.role}</p>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import vectorImage1 from "@/assets/Vector (1).png";
+import podcastBg from "@/assets/podcastbg1.mp4";
 
 const PodcastSection = () => {
   // YouTube video ID from: https://youtu.be/OCcDjCff1j4?si=e81qvEiuDfilV6bq
@@ -24,108 +24,62 @@ const PodcastSection = () => {
   return (
     <section
       id="podcast"
-      className="bg-[#FFF4E1] min-h-[80vh] md:max-h-[120vh] md:min-h-[120vh] relative overflow-hidden flex items-center py-12 md:py-0"
-      style={{
-        backgroundColor: "#FFF4E1",
-      }}
+      className="min-h-[60vh] md:min-h-[70vh] relative overflow-hidden flex items-center py-8 md:py-12"
     >
-      {/* Vector (1) Image at top */}
-      <div className="absolute top-0 left-0 right-0 pointer-events-none z-10 w-full">
-        <img
-          src={vectorImage1}
-          alt=""
-          className="w-full h-auto object-cover"
-          style={{ display: "block" }}
-        />
-      </div>
+      {/* Video Background */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover bg-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src={podcastBg} type="video/mp4" />
+      </video>
 
-      {/* Background decorative elements */}
-      <div
-        className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage: `radial-gradient(circle at 20% 50%, #B48B80 0%, transparent 50%),
-                            radial-gradient(circle at 80% 50%, #A37F76 0%, transparent 50%)`,
-        }}
-      ></div>
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/20"></div>
 
       {/* Content Layer */}
-      <div className="container mx-auto px-4 sm:px-6 md:px-20 relative z-20 w-full pt-0 md:pt-0 pb-4">
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start">
-          {/* Left - Description */}
-          <div className="relative flex flex-col justify-center space-y-2 md:space-y-3 order-2 md:order-1 md:-mt-12">
-            {/* Section Label */}
-            <div className="mb-1 pt-2 md:pt-0">
-              <span className="inline-block text-xs sm:text-sm font-semibold text-[#A37F76] uppercase tracking-wider">
-                Explore Our Podcast
-              </span>
-            </div>
+      <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-20 relative z-20 w-full">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+          {/* Left - Title */}
+          <div className="relative flex flex-col justify-center space-y-3 md:space-y-4">
+            {/* Small "the" text */}
+            <p className="text-white text-2xl md:text-3xl lg:text-4xl font-light italic mb-0">
+              the
+            </p>
 
             {/* Main Heading */}
-            <h2 className="font-serif text-[24px] sm:text-[28px] md:text-[32px] font-bold text-[#3A1D0F] leading-tight mb-2 text-center md:text-left">
-              <span className="text-shimmer-white">Tarot Wisdom</span>
+            <h2 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight font-serif">
+              Tarot Insights
               <br />
-              <span className="text-[#FFD700] font-waterfall text-[32px] sm:text-[36px] md:text-[40px] lg:text-[48px]">
-                Unveiled
-              </span>
+              Podcast
             </h2>
 
-            {/* Description Content */}
-            <div className="space-y-2 text-[#5C4330] leading-relaxed text-[14px] sm:text-[15px] md:text-[16px] lg:text-[18px] text-justify">
-              <p>
-                Embark on a mystical journey through the ancient art of tarot
-                reading in our captivating podcast series. Each episode delves
-                deep into the wisdom of the cards, exploring their profound
-                meanings and how they can illuminate your path forward.
-              </p>
-
-              <p>
-                Join us as we uncover the secrets of tarot, share insightful
-                readings, and guide you through life's most important questions.
-                Whether you're a seasoned practitioner or new to the world of
-                tarot, our podcast offers wisdom, clarity, and spiritual
-                enlightenment.
-              </p>
-
-              <div className="pt-2">
-                <div 
-                  className="w-full md:w-fit bg-[#a37f76ad] backdrop-blur-sm rounded-lg bg-shimmer-white p-2 md:p-3"
-                  style={{
-                    border: "1px solid rgba(255, 215, 0, 0.6)",
-                    boxShadow: "0 0 5px rgba(255, 215, 0, 0.3)"
-                  }}
-                >
-                  <span 
-                    className="font-waterfall text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-[800] block text-center md:text-left"
-                    style={{ 
-                      color: "#FFFFFF",
-                      textShadow: "none",
-                      WebkitTextFillColor: "#FFFFFF",
-                      background: "none",
-                      backgroundImage: "none"
-                    }}
-                  >
-                    "The cards reveal what the heart already knows."
-                  </span>
-                </div>
-              </div>
-            </div>
-
+            {/* Subtitle in cursive */}
+            <p className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-cursive italic mt-4">
+              with Rightsync Tarot
+            </p>
           </div>
 
           {/* Right - Video Thumbnail/Embed */}
-          <div className="relative flex justify-center md:justify-end order-1 md:order-2 md:pt-0 md:-mt-12">
-            <div className="relative w-full max-w-full sm:max-w-[500px] md:max-w-[550px] group">
+          <div className="relative flex justify-center md:justify-end">
+            <div className="relative w-full max-w-full sm:max-w-[450px] md:max-w-[500px] lg:max-w-[550px] group">
               {!isPlaying ? (
                 <div
-                  className={`relative rounded-[30px] overflow-hidden shadow-2xl transition-all duration-300 image-shimmer ${
-                    hasValidVideoId
+                  className={`relative rounded-[20px] md:rounded-[30px] overflow-hidden shadow-2xl transition-all duration-300 ${hasValidVideoId
                       ? "cursor-pointer hover:shadow-3xl hover:scale-[1.02]"
                       : ""
-                  }`}
+                    }`}
+                  style={{
+                    border: "3px solid white",
+                    boxShadow: "0 10px 40px rgba(0,0,0,0.4)"
+                  }}
                   onClick={handleThumbnailClick}
                 >
                   {/* Thumbnail Image */}
-                  <div className="relative aspect-video bg-gradient-to-br from-[#B48B80] to-[#A37F76] flex items-center justify-center">
+                  <div className="relative aspect-video bg-gradient-to-br from-purple-900 to-purple-700 flex items-center justify-center">
                     {hasValidVideoId && !thumbnailError ? (
                       <img
                         src={videoThumbnail}
@@ -135,29 +89,18 @@ const PodcastSection = () => {
                       />
                     ) : (
                       <div className="text-center p-8">
-                        <svg
-                          className="w-24 h-24 mx-auto mb-4 text-white/80"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
-                        </svg>
                         <p className="text-white/90 font-semibold text-lg">
                           Tarot Reading Podcast
                         </p>
-                        <p className="text-white/70 text-sm mt-2">
-                          {hasValidVideoId
-                            ? "Click to play"
-                            : "Add your YouTube video ID"}
-                        </p>
                       </div>
                     )}
+
                     {/* Play Button Overlay */}
                     {hasValidVideoId && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-all duration-300">
-                        <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/90 rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/20 transition-all duration-300">
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
                           <svg
-                            className="w-8 h-8 sm:w-10 sm:h-10 text-[#B48B80] ml-1"
+                            className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-purple-800 ml-1"
                             fill="currentColor"
                             viewBox="0 0 24 24"
                           >
@@ -166,13 +109,16 @@ const PodcastSection = () => {
                         </div>
                       </div>
                     )}
-                    {/* Decorative corner elements */}
-                    <div className="absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-white/50"></div>
-                    <div className="absolute bottom-4 left-4 w-12 h-12 border-b-2 border-l-2 border-white/50"></div>
                   </div>
                 </div>
               ) : hasValidVideoId ? (
-                <div className="relative rounded-[30px] overflow-hidden shadow-2xl image-shimmer">
+                <div
+                  className="relative rounded-[20px] md:rounded-[30px] overflow-hidden shadow-2xl"
+                  style={{
+                    border: "3px solid white",
+                    boxShadow: "0 10px 40px rgba(0,0,0,0.4)"
+                  }}
+                >
                   <div className="aspect-video">
                     <iframe
                       src={videoEmbedUrl}
@@ -187,38 +133,6 @@ const PodcastSection = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Golden Particles */}
-      <div
-        className="golden-particle golden-particle-small golden-particle-float"
-        style={{ top: "15%", right: "10%", animationDelay: "0s" }}
-      ></div>
-      <div
-        className="golden-particle golden-particle-medium"
-        style={{ top: "25%", left: "8%", animationDelay: "1.5s" }}
-      ></div>
-      <div
-        className="golden-particle golden-particle-small golden-particle-drift"
-        style={{ bottom: "20%", right: "15%", animationDelay: "2s" }}
-      ></div>
-      <div
-        className="golden-particle golden-particle-small"
-        style={{ top: "50%", left: "5%", animationDelay: "1.5s" }}
-      ></div>
-      <div
-        className="golden-particle golden-particle-medium"
-        style={{ bottom: "30%", left: "12%", animationDelay: "2.5s" }}
-      ></div>
-
-      {/* Golden Star */}
-      <div
-        className="golden-star golden-star-medium golden-star-float"
-        style={{ top: "60%", right: "8%" }}
-      >
-        <svg viewBox="0 0 24 24">
-          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-        </svg>
       </div>
     </section>
   );
