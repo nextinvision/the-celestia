@@ -58,9 +58,7 @@ const ServicesSection = () => {
     <section id="services" className="w-full bg-[#FFF4E1] py-6 sm:py-8 md:py-12 relative overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${bgforabout})`,
-        }}
+       
       ></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="w-full flex justify-center">

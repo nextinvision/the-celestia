@@ -11,12 +11,12 @@ const AboutSection = () => {
       }}
     >
       {/* Background Image Layer */}
-      <div
+      {/* <div
         className="absolute inset-0 bg-cover bg-center opacity-60"
         style={{
           backgroundImage: `url(${aboutBg})`,
         }}
-      ></div>
+      ></div> */}
 
 
       {/* Content Layer */}
