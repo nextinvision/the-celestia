@@ -32,14 +32,14 @@ const Footer = () => {
 
                 {/* Icons at the end/bottom */}
                 <div className="icons relative z-20 pb-4">
-                    <ul className='flex justify-center gap-4 text-white text-2xl'>
+                    <ul className='flex justify-center gap-4 text-white text-4xl'>
                         <li><FaYoutube /></li>
                         <li><FaInstagram /></li>
                         <li><FaTwitter /></li>
                     </ul>
                 </div>
             </div>
-            <div className='h-20 w-full text-center content-center text-xl'>@. CREATED BY Wix Website Templates</div>
+            <div className='h-20 w-full text-center content-center text-xl bg-[#FDFCFA] ' >@. CREATED BY Wix Website Templates</div>
         </>
     )
 }

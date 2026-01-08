@@ -7,6 +7,7 @@ import EventsSection from "@/components/EventsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/layout/Footer";
+import PowefulSection from "@/components/PowefulSection";
 
 const Index = () => {
   return (
@@ -18,7 +19,8 @@ const Index = () => {
       <ServicesSection />
       <EventsSection />
       <TestimonialsSection />
-      <ContactSection />
+      {/* <ContactSection /> */}
+      <PowefulSection />
       <Footer />
     </div>
   );
