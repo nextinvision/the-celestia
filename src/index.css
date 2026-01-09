@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Waterfall&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Waterfall&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Waterbrush&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne&family=Water+Brush&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,6 +9,13 @@
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
+
+.water-brush-regular {
+  font-family: "Water Brush", cursive;
+  font-weight: 500;
+  font-style: normal;
+}
+
 
 .waterfall-regular {
   font-family: "Waterfall", cursive;

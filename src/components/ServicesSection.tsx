@@ -72,7 +72,7 @@ const ServicesSection = () => {
   }, [api]);
 
   return (
-    <div className='min-h-screen bg-[#FDFCFA] flex flex-col items-center justify-center p-6 sm:p-8 md:p-12 relative overflow-hidden'>
+    <div className='min-h-screen bg-[#FDFCFA] flex flex-col items-center justify-center  relative overflow-hidden'>
       {/* Stars Top */}
       <div className="absolute top-0 right-0 w-40 sm:w-48 md:w-56 lg:w-72 opacity-80 pointer-events-none z-0">
         <img src={starsTop} alt="" className="w-full h-auto" />
@@ -95,9 +95,9 @@ const ServicesSection = () => {
       <div className="absolute bottom-32 right-16 text-2xl text-[#856654] opacity-25">+</div>
       <div className="absolute bottom-20 left-1/3 text-xl text-[#856654] opacity-20">+</div>
 
-      <div className="container max-w-7xl mx-auto relative z-10">
+      <div className="container max-w-8xl mx-auto relative z-10">
         {/* Header Banner */}
-        <div className="mb-12 md:mb-16">
+        <div className="mb-12 md:mb-8 p-6 sm:p-8 md:p-12">
           <div className="bg-[#856654] text-white px-6 sm:px-8 md:px-12 py-6 sm:py-8 md:py-10 rounded-lg shadow-xl max-w-5xl mx-auto">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light mb-4">
               let's cut to the chase...
@@ -114,7 +114,7 @@ const ServicesSection = () => {
         </div>
 
         {/* Choose Your Service Heading */}
-        <h1 className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-waterbrush italic text-[#856654] mb-12 md:mb-16">
+        <h1 className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl water-brush-regular italic text-[#856654] mb-6">
           Choose Your Service
         </h1>
 
@@ -125,40 +125,40 @@ const ServicesSection = () => {
             align: "start",
             loop: true,
           }}
-          className="w-full max-w-6xl mx-auto"
+          className="w-full max-w-8xl mx-auto"
         >
-          <CarouselContent className="-ml-4">
+          <CarouselContent className="-ml-8">
             {services.map((service, index) => {
               // Cycle through 3 colors
               const colors = ['#856654', '#D0BDAC', '#E9E2DC'];
               const bgColor = colors[index % 3];
 
               return (
-                <CarouselItem key={index} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={index} className="pl-8 basis-full md:basis-1/2 lg:basis-1/3">
                   <div
                     className="flex flex-col items-center cursor-pointer transition-transform duration-300 hover:scale-105"
                     onClick={() => navigate(service.route)}
                   >
+                    <div
+                      className="absolute top-[65px] w-[25vw] z-10 "
+                      style={{
+                        background: 'linear-gradient(145deg, #F5E3B8 0%, #C8A25C 25%, #A88042 50%, #7A4B13 75%, #673500 100%)',
+                        boxShadow: '0 4px 12px rgba(142, 106, 72, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)'
+                      }}
+                    >
+                      <h3
+                        className="text-center text-white font-bold text-sm sm:text-base md:text-lg py-3 px-3"
+                        style={{
+                          textShadow: '0 2px 4px rgba(0,0,0,0.3)'
+                        }}
+                      >
+                        {service.name}
+                      </h3>
+                    </div>
                     {/* Individual Card Container */}
                     <div className="relative w-full max-w-sm mt-12">
                       {/* Golden Banner - Individual for each card */}
-                      <div
-                        className="absolute top-[-20px] left-[10%] right-[10%] z-10"
-                        style={{
-                          background: 'linear-gradient(145deg, #8E6A48 0%, #C49B63 35%, #E6C183 65%, #B08859 100%)',
-                          boxShadow: '0 4px 12px rgba(142, 106, 72, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
-                          clipPath: 'polygon(3% 0%, 97% 0%, 100% 25%, 100% 75%, 97% 100%, 3% 100%, 0% 75%, 0% 25%)'
-                        }}
-                      >
-                        <h3
-                          className="text-center text-white font-bold text-sm sm:text-base md:text-lg py-3 px-3"
-                          style={{
-                            textShadow: '0 2px 4px rgba(0,0,0,0.3)'
-                          }}
-                        >
-                          {service.name}
-                        </h3>
-                      </div>
+
 
                       {/* Card with Colored Frame */}
                       <div
@@ -166,7 +166,7 @@ const ServicesSection = () => {
                         style={{ backgroundColor: bgColor }}
                       >
                         {/* Image without border */}
-                        <div className="overflow-hidden aspect-[3/4]">
+                        <div className="overflow-hidden aspect-[4/5]">
                           <img
                             src={service.image}
                             alt={service.name}
