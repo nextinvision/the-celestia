@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import podcastBg from "@/assets/podcastbg1.mp4";
 
 const PodcastSection = () => {
@@ -6,6 +6,7 @@ const PodcastSection = () => {
   const youtubeVideoId = "OCcDjCff1j4";
   const [isPlaying, setIsPlaying] = useState(false);
   const [thumbnailError, setThumbnailError] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const hasValidVideoId = !!youtubeVideoId && youtubeVideoId.trim().length > 0;
   const videoThumbnail = hasValidVideoId
@@ -21,6 +22,33 @@ const PodcastSection = () => {
     }
   };
 
+  // Intersection Observer for scroll-triggered video playback
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play().catch(err => console.log("Video play failed:", err));
+          } else {
+            video.pause();
+          }
+        });
+      },
+      {
+        threshold: 0.25, // Trigger when 25% of the section is visible
+      }
+    );
+
+    observer.observe(video);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <section
       id="podcast"
@@ -28,8 +56,9 @@ const PodcastSection = () => {
     >
       {/* Video Background */}
       <video
-        className="absolute inset-0 w-full h-full object-cover bg-cover"
-        autoPlay
+        ref={videoRef}
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ minWidth: '100%', minHeight: '100%' }}
         loop
         muted
         playsInline
@@ -37,8 +66,13 @@ const PodcastSection = () => {
         <source src={podcastBg} type="video/mp4" />
       </video>
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/20"></div>
+      {/* Gradient Overlay with Theme Color */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: 'linear-gradient(135deg, rgba(133, 102, 84, 0.3) 0%, rgba(133, 102, 84, 0.5) 50%, rgba(133, 102, 84, 0.3) 100%)'
+        }}
+      ></div>
 
       {/* Content Layer */}
       <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-20 relative z-20 w-full">
@@ -69,8 +103,8 @@ const PodcastSection = () => {
               {!isPlaying ? (
                 <div
                   className={`relative rounded-[20px] md:rounded-[30px] overflow-hidden shadow-2xl transition-all duration-300 ${hasValidVideoId
-                      ? "cursor-pointer hover:shadow-3xl hover:scale-[1.02]"
-                      : ""
+                    ? "cursor-pointer hover:shadow-3xl hover:scale-[1.02]"
+                    : ""
                     }`}
                   style={{
                     border: "3px solid white",
