@@ -38,7 +38,7 @@ const AboutSection = () => {
               {/* h2 with Waterfall font */}
               <h2 className="font-serif text-[28px] sm:text-[36px] md:text-[40px] lg:text-[45px] font-700 text-[#3A1D0F] leading-tight drop-shadow-sm relative md:-left-[210px] text-center md:text-left"
               >
-                The Soul Behind Righttsign Tarot
+                The celestia
               </h2>
 
               <h3
