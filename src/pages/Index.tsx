@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navigation from "@/components/layout/Navigation";
 import NotificationBar from "@/components/layout/NotificationBar";
 import HeroSection from "@/components/HeroSection";
@@ -11,10 +12,15 @@ import Footer from "@/components/layout/Footer";
 import PowefulSection from "@/components/PowefulSection";
 import Events from "@/components/Events";
 const Index = () => {
+  const [isNotificationVisible, setIsNotificationVisible] = useState(true);
+
   return (
     <div className="min-h-screen overflow-x-hidden">
-      <NotificationBar />
-      <Navigation />
+      <NotificationBar
+        isVisible={isNotificationVisible}
+        onClose={() => setIsNotificationVisible(false)}
+      />
+      <Navigation isNotificationVisible={isNotificationVisible} />
       <HeroSection />
       {/* <AboutSection /> */}
 

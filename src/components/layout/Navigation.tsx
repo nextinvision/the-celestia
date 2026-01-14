@@ -2,7 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import logo from "@/assets/logo.png"; // adjust path if needed
 
-const Navigation = () => {
+interface NavigationProps {
+  isNotificationVisible: boolean;
+}
+
+const Navigation: React.FC<NavigationProps> = ({ isNotificationVisible }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
@@ -81,7 +85,8 @@ const Navigation = () => {
 
   return (
     <nav
-      className="fixed top-[44px] left-0 right-0 z-[500] border-b border-[#8B7355]/20"
+      className={`fixed left-0 right-0 z-[500] border-b border-[#8B7355]/20 transition-all duration-300 ${isNotificationVisible ? 'top-[44px]' : 'top-0'
+        }`}
       style={{
         backgroundColor: "#FDFCFA",
       }}

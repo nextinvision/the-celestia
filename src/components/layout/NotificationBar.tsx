@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
-const NotificationBar = () => {
-    const [isVisible, setIsVisible] = useState(true);
+interface NotificationBarProps {
+    isVisible: boolean;
+    onClose: () => void;
+}
 
+const NotificationBar: React.FC<NotificationBarProps> = ({ isVisible, onClose }) => {
     if (!isVisible) return null;
 
     return (
@@ -19,7 +22,7 @@ const NotificationBar = () => {
                     </span>
                 </div>
                 <button
-                    onClick={() => setIsVisible(false)}
+                    onClick={onClose}
                     className="ml-4 text-white hover:text-white/80 transition-colors flex-shrink-0"
                     aria-label="Close notification"
                 >
