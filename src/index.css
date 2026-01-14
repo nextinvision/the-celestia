@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Waterfall&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Waterfall&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Syne&family=Water+Brush&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@500&family=Water+Brush&family=Whisper&display=swap');
+
+
 
 @tailwind base;
 @tailwind components;
@@ -22,6 +25,12 @@ All colors MUST be HSL.
   font-weight: 400;
   font-style: normal;
 }
+.whisper-regular {
+  font-family: "Whisper", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 .jeju {
   font-family: 'Jeju Myeonjo';

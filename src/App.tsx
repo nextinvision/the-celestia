@@ -12,6 +12,7 @@ import Reiki from "./pages/Reiki";
 import TarotGuidance from "./pages/TarotGuidance";
 import Numerology from "./pages/Numerology";
 import bodyImage from "@/assets/bodyimage.svg";
+import Hidden from "@/assets/download.png"
 
 const queryClient = new QueryClient();
 
@@ -20,7 +21,7 @@ const App = () => (
     <TooltipProvider>
       <div
         className="min-h-screen w-full bg-cover bg-center bg-fixed bg-no-repeat"
-        style={{ backgroundImage: `url(${bodyImage})` }}
+        style={{ backgroundImage: `url(${Hidden})` }}
       >
         <Toaster />
         <Sonner />

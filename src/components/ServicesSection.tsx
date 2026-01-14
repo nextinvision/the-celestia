@@ -74,26 +74,26 @@ const ServicesSection = () => {
   return (
     <div className='min-h-screen bg-[#FDFCFA] flex flex-col items-center justify-center  relative overflow-hidden'>
       {/* Stars Top */}
-      <div className="absolute top-0 right-0 w-40 sm:w-48 md:w-56 lg:w-72 opacity-80 pointer-events-none z-0">
+      <div className="absolute top-0 right-0 w-40 sm:w-48 md:w-56 lg:w-72 opacity-80 pointer-events-none z-0 animate-[pulse_4s_ease-in-out_infinite]">
         <img src={starsTop} alt="" className="w-full h-auto" />
       </div>
 
       {/* Stars Bottom */}
-      <div className="absolute bottom-0 left-0 w-40 sm:w-48 md:w-56 lg:w-72 opacity-80 pointer-events-none z-0">
+      <div className="absolute bottom-0 left-0 w-40 sm:w-48 md:w-56 lg:w-72 opacity-80 pointer-events-none z-0 animate-[pulse_4s_ease-in-out_infinite]" style={{ animationDelay: "2s" }}>
         <img src={starsBottom} alt="" className="w-full h-auto" />
       </div>
 
       {/* Scattered Star Symbols */}
-      <div className="absolute top-1/4 left-12 text-4xl text-[#856654] opacity-40">✦</div>
-      <div className="absolute top-1/3 right-20 text-3xl text-[#856654] opacity-35">✦</div>
-      <div className="absolute bottom-1/3 left-1/4 text-2xl text-[#856654] opacity-30">✦</div>
-      <div className="absolute bottom-1/4 right-1/3 text-3xl text-[#856654] opacity-35">✦</div>
+      <div className="absolute top-1/4 left-12 text-4xl text-[#856654] opacity-40 animate-bounce" style={{ animationDuration: '3000ms' }}>✦</div>
+      <div className="absolute top-1/3 right-20 text-3xl text-[#856654] opacity-35 animate-pulse" style={{ animationDuration: '2000ms' }}>✦</div>
+      <div className="absolute bottom-1/3 left-1/4 text-2xl text-[#856654] opacity-30 animate-bounce" style={{ animationDelay: "1s", animationDuration: '4000ms' }}>✦</div>
+      <div className="absolute bottom-1/4 right-1/3 text-3xl text-[#856654] opacity-35 animate-pulse" style={{ animationDelay: "0.5s", animationDuration: '3000ms' }}>✦</div>
 
       {/* Plus/Cross Symbols */}
-      <div className="absolute top-20 left-20 text-2xl text-[#856654] opacity-25">+</div>
-      <div className="absolute top-1/2 left-10 text-xl text-[#856654] opacity-20">+</div>
-      <div className="absolute bottom-32 right-16 text-2xl text-[#856654] opacity-25">+</div>
-      <div className="absolute bottom-20 left-1/3 text-xl text-[#856654] opacity-20">+</div>
+      <div className="absolute top-20 left-20 text-2xl text-[#856654] opacity-25 animate-spin" style={{ animationDuration: '10000ms' }}>+</div>
+      <div className="absolute top-1/2 left-10 text-xl text-[#856654] opacity-20 animate-pulse">+</div>
+      <div className="absolute bottom-32 right-16 text-2xl text-[#856654] opacity-25 animate-spin" style={{ animationDuration: '12000ms' }}>+</div>
+      <div className="absolute bottom-20 left-1/3 text-xl text-[#856654] opacity-20 animate-pulse delay-75">+</div>
 
       <div className="container max-w-8xl mx-auto relative z-10">
         {/* Header Banner */}
@@ -176,12 +176,12 @@ const ServicesSection = () => {
 
                         {/* Decorative dots at bottom */}
                         <div className="absolute bottom-3 left-4 flex gap-2">
-                          <div className="w-2 h-2 rounded-full bg-[#8B6F47] opacity-60"></div>
-                          <div className="w-2 h-2 rounded-full bg-[#8B6F47] opacity-60"></div>
+                          <div className="w-2 h-2 rounded-full bg-[#704C37] opacity-60"></div>
+                          <div className="w-2 h-2 rounded-full bg-[#704C37] opacity-60"></div>
                         </div>
                         <div className="absolute bottom-3 right-4 flex gap-2">
-                          <div className="w-2 h-2 rounded-full bg-[#8B6F47] opacity-60"></div>
-                          <div className="w-2 h-2 rounded-full bg-[#8B6F47] opacity-60"></div>
+                          <div className="w-2 h-2 rounded-full bg-[#704C37] opacity-60"></div>
+                          <div className="w-2 h-2 rounded-full bg-[#704C37] opacity-60"></div>
                         </div>
                       </div>
                     </div>
