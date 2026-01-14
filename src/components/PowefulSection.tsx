@@ -22,9 +22,9 @@ const PowefulSection = () => {
                 </p>
 
                 {/* CTA Button */}
-                <div className='flex justify-end'>
+                <div className='flex justify-center md:justify-end'>
                     <button
-                        className='relative text-white font-semibold px-8 py-3 sm:px-10 sm:py-4 rounded-md text-base sm:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg overflow-hidden'
+                        className='relative text-white font-semibold px-6 py-3 sm:px-8 sm:py-3 md:px-10 md:py-4 rounded-md text-sm sm:text-base md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg overflow-hidden'
                         style={{
                             background: 'linear-gradient(145deg, #F5E3B8 0%, #C8A25C 25%, #A88042 50%, #7A4B13 75%, #673500 100%)',
                             boxShadow: '0 4px 15px rgba(122, 75, 19, 0.3), inset 0 1px 0 rgba(245, 227, 184, 0.5)'

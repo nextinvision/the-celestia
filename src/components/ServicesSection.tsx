@@ -140,7 +140,7 @@ const ServicesSection = () => {
                     onClick={() => navigate(service.route)}
                   >
                     <div
-                      className="absolute top-[65px] w-[25vw] z-10 "
+                      className="absolute top-[65px] w-[80%] max-w-[260px] z-10 "
                       style={{
                         background: 'linear-gradient(145deg, #F5E3B8 0%, #C8A25C 25%, #A88042 50%, #7A4B13 75%, #673500 100%)',
                         boxShadow: '0 4px 12px rgba(142, 106, 72, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)'
@@ -191,8 +191,8 @@ const ServicesSection = () => {
             }
             )}
           </CarouselContent>
-          <CarouselPrevious className="left-2 bg-[#856654] text-white border-none hover:bg-[#6B5243]" />
-          <CarouselNext className="right-2 bg-[#856654] text-white border-none hover:bg-[#6B5243]" />
+          <CarouselPrevious className="hidden md:flex left-2 bg-[#856654] text-white border-none hover:bg-[#6B5243]" />
+          <CarouselNext className="hidden md:flex right-2 bg-[#856654] text-white border-none hover:bg-[#6B5243]" />
         </Carousel>
       </div>
     </div>

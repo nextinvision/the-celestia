@@ -93,7 +93,7 @@ const Navigation = () => {
             <img
               src={logo}
               alt="the Celestia Studio Logo"
-              className="h-24 w-auto"
+              className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto transition-all duration-300"
             />
           </div>
 

@@ -13,9 +13,9 @@ const NotificationBar = () => {
             }}
         >
             <div className="container mx-auto flex items-center justify-between">
-                <div className="flex items-center justify-center flex-1 gap-2">
-                    <span className="text-sm sm:text-base font-medium text-center">
-                        ✨ <span className="hidden sm:inline">Special Offer:</span> Book your first session and get 20% off! Use code: <span className="font-bold bg-white/20 px-2 py-0.5 rounded">CELESTIA20</span>
+                <div className="flex flex-col sm:flex-row items-center justify-center flex-1 gap-2 text-center">
+                    <span className="text-xs sm:text-sm md:text-base font-medium leading-tight">
+                        ✨ <span className="inline">Special Offer:</span> Book your first session and get 20% off! <br className="sm:hidden" /> Use code: <span className="font-bold bg-white/20 px-2 py-0.5 rounded whitespace-nowrap">CELESTIA20</span>
                     </span>
                 </div>
                 <button

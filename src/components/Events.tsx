@@ -2,14 +2,14 @@ import React from 'react'
 
 const Events = () => {
     return (
-        <div className='min-h-screen bg-[#FDFCFA] flex flex-col items-center justify-between p-12'>
+        <div className='min-h-screen bg-[#FDFCFA] flex flex-col items-center justify-between p-4 sm:p-12'>
             {/* Infinite Scrolling Text Strip */}
             <div className='bg-[#856654] overflow-hidden py-2 mt-12 relative max-w-[96vw] rounded-[20px]'>
                 <div className='animate-scroll-left whitespace-nowrap inline-block'>
-                    <span className='text-white text-xl sm:text-2xl md:text-3xl font-medium mx-8'>
+                    <span className='text-white text-lg sm:text-2xl md:text-3xl font-medium mx-4 sm:mx-8'>
                         Prosperity + wellness + Prosperity + wellness + Prosperity + wellness + Prosperity + wellness + Prosperity + wellness +
                     </span>
-                    <span className='text-white text-xl sm:text-2xl md:text-3xl font-medium mx-8'>
+                    <span className='text-white text-lg sm:text-2xl md:text-3xl font-medium mx-4 sm:mx-8'>
                         Prosperity + wellness + Prosperity + wellness + Prosperity + wellness + Prosperity + wellness + Prosperity + wellness +
                     </span>
                 </div>

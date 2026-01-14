@@ -128,7 +128,7 @@ const TestimonialsSection = () => {
                 <div className="relative z-10 bg-[#fcf9f7] shadow-xl rounded-md w-[90%] sm:w-[85%] md:w-[75%] lg:w-[60%] flex flex-col md:flex-row items-center md:items-center p-3 sm:p-4 md:p-6 overflow-visible md:overflow-visible">
                   {/* === Left Image (Oval Capsule Shape) === */}
                   <div className="relative md:-ml-24 lg:-ml-32 mt-0 md:mt-0 flex-shrink-0">
-                    <div className="w-[120px] h-[180px] sm:w-[140px] sm:h-[200px] md:w-[160px] md:h-[240px] lg:w-[180px] lg:h-[270px] rounded-[100px] overflow-hidden shadow-xl bg-white golden-border-solid border-shimmer p-2">
+                    <div className="w-[100px] h-[150px] sm:w-[120px] sm:h-[180px] md:w-[160px] md:h-[240px] lg:w-[180px] lg:h-[270px] rounded-[100px] overflow-hidden shadow-xl bg-white golden-border-solid border-shimmer p-2">
                       <img
                         src={testimonial.image}
                         alt={testimonial.name}
@@ -172,8 +172,8 @@ const TestimonialsSection = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="left-2 sm:left-4 bg-[#B48B80] text-white border-none hover:bg-[#A37F76]" />
-        <CarouselNext className="right-2 sm:right-4 bg-[#B48B80] text-white border-none hover:bg-[#A37F76]" />
+        <CarouselPrevious className="hidden md:flex left-2 sm:left-4 bg-[#B48B80] text-white border-none hover:bg-[#A37F76]" />
+        <CarouselNext className="hidden md:flex right-2 sm:right-4 bg-[#B48B80] text-white border-none hover:bg-[#A37F76]" />
       </Carousel>
 
       {/* ===== Decorative Feathers ===== */}
