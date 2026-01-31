@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 import Navigation from "@/components/layout/Navigation";
+import Footer from "@/components/layout/Footer";
 import numerologyImg from "@/assets/numerology.jpg";
 import bookImg from "@/assets/numerology.jpg";
 import diceImg from "@/assets/dice.png";
+import ContactButton from "@/components/ContactButton";
 
 const Numerology = () => {
   useEffect(() => {
@@ -11,12 +13,13 @@ const Numerology = () => {
 
   return (
     <div
-      className="min-h-screen w-full text-white"
+      className="min-h-screen w-full"
       style={{
-        background: "radial-gradient(circle at top, #3B064D 0%, #0A020F 55%, #040006 100%)",
+        background: "#FDFCFA",
+        color: "#856654"
       }}
     >
-      <Navigation />
+      <Navigation isNotificationVisible={false} />
 
       {/* Top Author Banner */}
       <section
@@ -28,19 +31,12 @@ const Numerology = () => {
           <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8 sm:gap-10 md:gap-16">
             {/* Name + button */}
             <div className="flex flex-col items-center md:items-start mt-2 sm:mt-4 md:mt-10 w-full md:w-auto">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-[0.15em] sm:tracking-[0.18em] text-white font-serif uppercase text-center md:text-left leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-[0.15em] sm:tracking-[0.18em] text-[#856654] font-serif uppercase text-center md:text-left leading-tight">
                 Sunita
                 <br />
                 Ramrakhiyani
               </h1>
-              <button
-                className="mt-4 sm:mt-6 px-6 sm:px-8 py-2 text-[10px] sm:text-xs md:text-sm font-semibold tracking-[0.2em] sm:tracking-[0.25em] uppercase border border-[#E0C774] bg-[#E0C774] text-[#3B064D] shadow-[0_10px_25px_rgba(0,0,0,0.6)] hover:bg-[#D4B863] transition-colors"
-                style={{
-                  borderRadius: "999px",
-                }}
-              >
-                MEET THE AUTHOR
-              </button>
+              <ContactButton serviceName="Numerology" variant="outline" />
             </div>
 
             {/* Portrait card */}
@@ -49,16 +45,16 @@ const Numerology = () => {
               <div
                 className="absolute inset-0 translate-x-4 -translate-y-4 hidden sm:block"
                 style={{
-                  border: "2px solid #E0C774",
+                  border: "2px solid #D0BDAC",
                   transform: "rotate(3deg) translateX(14px) translateY(-18px)",
                 }}
               />
               <div
-                className="relative w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] aspect-[3/4] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.75)] sm:shadow-[0_26px_55px_rgba(0,0,0,0.85)]"
+                className="relative w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] aspect-[3/4] overflow-hidden shadow-[0_20px_40px_rgba(133,102,84,0.4)] sm:shadow-[0_26px_55px_rgba(133,102,84,0.5)]"
                 style={{
                   transform: "rotate(-3deg)",
-                  border: "3px solid #E0C774",
-                  backgroundColor: "#1A031F",
+                  border: "3px solid #D0BDAC",
+                  backgroundColor: "#856654",
                 }}
               >
                 <img
@@ -82,7 +78,7 @@ const Numerology = () => {
             <img
               src={diceImg}
               alt="Dice"
-              className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] object-contain shadow-[0_20px_40px_rgba(0,0,0,0.9)]"
+              className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] object-contain opacity-50"
               style={{
                 transform: "rotate(12deg)",
                 backgroundColor: "transparent",
@@ -98,7 +94,7 @@ const Numerology = () => {
             <img
               src={diceImg}
               alt="Dice"
-              className="w-48 h-48 sm:w-56 sm:h-56 object-contain opacity-90"
+              className="w-48 h-48 sm:w-56 sm:h-56 object-contain opacity-40"
               style={{
                 transform: "rotate(12deg)",
                 backgroundColor: "transparent",
@@ -110,7 +106,7 @@ const Numerology = () => {
             <img
               src={diceImg}
               alt="Dice"
-              className="w-48 h-48 sm:w-56 sm:h-56 object-contain opacity-90"
+              className="w-48 h-48 sm:w-56 sm:h-56 object-contain opacity-40"
               style={{
                 transform: "rotate(-12deg)",
                 backgroundColor: "transparent",
@@ -124,15 +120,15 @@ const Numerology = () => {
           <div className="grid md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] gap-8 sm:gap-10 md:gap-16 items-start">
             {/* Left: Book card */}
             <div className="relative flex justify-center md:justify-start order-2 md:order-1">
-              <div className="relative w-full max-w-[230px] sm:max-w-[260px] md:w-[260px] lg:w-[290px] shadow-[0_20px_40px_rgba(0,0,0,0.8)] sm:shadow-[0_30px_60px_rgba(0,0,0,0.9)]">
+              <div className="relative w-full max-w-[230px] sm:max-w-[260px] md:w-[260px] lg:w-[290px] shadow-[0_20px_40px_rgba(133,102,84,0.4)] sm:shadow-[0_30px_60px_rgba(133,102,84,0.5)]">
                 {/* Book image */}
                 <div
                   className="w-full aspect-[2/3] overflow-hidden"
                   style={{
                     borderRadius: "6px",
-                    border: "2px solid #E0C774",
+                    border: "2px solid #D0BDAC",
                     background:
-                      "linear-gradient(145deg, #250217 0%, #4A0727 40%, #7F0D3C 100%)",
+                      "linear-gradient(145deg, #856654 0%, #6B5243 40%, #4A3829 100%)",
                   }}
                 >
                   <img
@@ -144,13 +140,22 @@ const Numerology = () => {
 
                 {/* Call-to-action button */}
                 <button
-                  className="mt-4 w-full py-2.5 text-[10px] sm:text-xs md:text-sm font-semibold tracking-[0.18em] sm:tracking-[0.22em] uppercase bg-[#B92D5B] text-white shadow-[0_12px_24px_rgba(0,0,0,0.8)] sm:shadow-[0_16px_30px_rgba(0,0,0,0.85)] hover:bg-[#A0254F] transition-colors"
+                  className="mt-4 w-full py-2.5 text-[10px] sm:text-xs md:text-sm font-semibold tracking-[0.18em] sm:tracking-[0.22em] uppercase text-white shadow-[0_12px_24px_rgba(133,102,84,0.4)] sm:shadow-[0_16px_30px_rgba(133,102,84,0.5)] transition-all duration-300"
                   style={{
                     borderRadius: "999px",
-                    border: "1px solid rgba(255,255,255,0.45)",
+                    border: "1px solid rgba(208, 189, 172, 0.45)",
+                    background: 'linear-gradient(145deg, #F5E3B8 0%, #C8A25C 25%, #A88042 50%, #7A4B13 75%, #673500 100%)',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-2px)";
+                    e.currentTarget.style.boxShadow = "0 16px 35px rgba(133,102,84,0.6)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow = "0 12px 24px rgba(133,102,84,0.4)";
                   }}
                 >
-                  ADD TO STORYGRAPH
+                  LEARN MORE
                 </button>
               </div>
             </div>
@@ -163,7 +168,7 @@ const Numerology = () => {
                 <img
                   src={diceImg}
                   alt="Dice"
-                  className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] object-contain shadow-[0_20px_40px_rgba(0,0,0,0.9)]"
+                  className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] object-contain opacity-50"
                   style={{
                     transform: "rotate(-12deg)",
                     backgroundColor: "transparent",
@@ -176,24 +181,24 @@ const Numerology = () => {
 
               {/* Heading + copy */}
               <div className="max-w-xl mx-auto md:mx-0">
-                <h2 className="text-xs sm:text-sm md:text-base lg:text-lg tracking-[0.25em] sm:tracking-[0.32em] uppercase text-[#E0C774] mb-3 sm:mb-4 md:mb-6 text-center md:text-left leading-tight">
+                <h2 className="text-xs sm:text-sm md:text-base lg:text-lg tracking-[0.25em] sm:tracking-[0.32em] uppercase text-[#856654] font-bold mb-3 sm:mb-4 md:mb-6 text-center md:text-left leading-tight">
                   FATE DOES NOT CHOOSE THE WEAK. FATE CHOOSES THE READY.
                 </h2>
-                <p className="text-[11px] sm:text-xs md:text-sm lg:text-base leading-relaxed text-[#F2E7FF] mb-3">
+                <p className="text-[11px] sm:text-xs md:text-sm lg:text-base leading-relaxed text-[#856654]/90 mb-3">
                   In the realm of numerology, every number carries a secret
                   rhythm, a hidden language that reveals the soul&apos;s
                   journey. Each digit in your chart is a doorway into destiny,
                   whispering who you are, what you are here to learn, and where
                   your power truly lies.
                 </p>
-                <p className="text-[11px] sm:text-xs md:text-sm lg:text-base leading-relaxed text-[#E4D5FA] mb-3">
+                <p className="text-[11px] sm:text-xs md:text-sm lg:text-base leading-relaxed text-[#856654]/85 mb-3">
                   This is not about prediction—it is about preparation. When you
                   align with your personal numbers, you begin to see how
                   &quot;coincidence&quot; is actually cosmic choreography. The
                   right doors appear. The right people arrive. The path that
                   once felt uncertain begins to glow beneath your feet.
                 </p>
-                <p className="text-[11px] sm:text-xs md:text-sm lg:text-base leading-relaxed text-[#D8C7F5]">
+                <p className="text-[11px] sm:text-xs md:text-sm lg:text-base leading-relaxed text-[#856654]/80">
                   Whether you are standing at the edge of a new beginning or
                   deep within a turning point, numerology offers a lantern for
                   the dark. You are not at the mercy of fate—you are in
@@ -204,6 +209,9 @@ const Numerology = () => {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

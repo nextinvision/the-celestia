@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import Navigation from "@/components/layout/Navigation";
+import Footer from "@/components/layout/Footer";
 import servicesPhoto2 from "@/assets/img5.jpg";
 import img4 from "@/assets/img4.jpg";
+import ContactButton from "@/components/ContactButton";
 
 const IntuitiveCoaching = () => {
   useEffect(() => {
@@ -10,20 +12,20 @@ const IntuitiveCoaching = () => {
 
   return (
     <div className="min-h-screen relative">
-      <Navigation />
+      <Navigation isNotificationVisible={false} />
 
       {/* Header Banner Section - Pixel Perfect */}
-      <section className="w-full relative pt-16 md:pt-20" style={{ backgroundColor: "#FAF8F3" }}>
+      <section className="w-full relative pt-16 md:pt-20" style={{ backgroundColor: "#FDFCFA" }}>
         <div className="container mx-auto px-4 sm:px-6 py-12 md:py-16 lg:py-20">
           <div className="flex items-center justify-center relative">
             {/* Main Text Container */}
             <div className="flex flex-col items-center justify-center gap-2 md:gap-3 relative px-12 md:px-16">
               {/* Left Starbursts - positioned to the left of COACHING */}
               <div className="absolute left-0 flex flex-col items-center justify-center" style={{ top: "50%", transform: "translateY(-50%)", gap: "14px" }}>
-                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" style={{ color: "#F5A082", marginTop: "-6px" }}>
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" style={{ color: "#D0BDAC", marginTop: "-6px" }}>
                   <path d="M12 2L14 8L20 8L15 12L17 18L12 15L7 18L9 12L4 8L10 8L12 2Z" fill="currentColor" />
                 </svg>
-                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" style={{ color: "#F5A082", marginTop: "6px" }}>
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" style={{ color: "#D0BDAC", marginTop: "6px" }}>
                   <path d="M12 2L14 8L20 8L15 12L17 18L12 15L7 18L9 12L4 8L10 8L12 2Z" fill="currentColor" />
                 </svg>
               </div>
@@ -33,7 +35,7 @@ const IntuitiveCoaching = () => {
                 <span
                   className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold uppercase tracking-wide"
                   style={{
-                    color: "#2C2C2C",
+                    color: "#856654",
                     lineHeight: "1.1",
                     fontFamily: 'system-ui, -apple-system, sans-serif',
                     letterSpacing: "0.05em"
@@ -48,7 +50,7 @@ const IntuitiveCoaching = () => {
                     className="text-xl md:text-2xl lg:text-3xl lowercase"
                     style={{
                       fontFamily: '"Dancing Script", "Brush Script MT", "Lucida Handwriting", cursive',
-                      color: "#2C2C2C",
+                      color: "#856654",
                       lineHeight: "1.2",
                       fontStyle: "normal",
                       fontWeight: "400"
@@ -59,7 +61,7 @@ const IntuitiveCoaching = () => {
                   <span
                     className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold uppercase tracking-wide"
                     style={{
-                      color: "#2C2C2C",
+                      color: "#856654",
                       lineHeight: "1.1",
                       fontFamily: 'system-ui, -apple-system, sans-serif',
                       letterSpacing: "0.05em"
@@ -72,10 +74,10 @@ const IntuitiveCoaching = () => {
 
               {/* Right Starbursts - positioned to the right of SUNITA RAMRAKHIYANI */}
               <div className="absolute right-0 flex flex-col items-center justify-center" style={{ top: "50%", transform: "translateY(-50%)", gap: "14px" }}>
-                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" style={{ color: "#F5A082", marginTop: "-6px" }}>
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" style={{ color: "#D0BDAC", marginTop: "-6px" }}>
                   <path d="M12 2L14 8L20 8L15 12L17 18L12 15L7 18L9 12L4 8L10 8L12 2Z" fill="currentColor" />
                 </svg>
-                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" style={{ color: "#F5A082", marginTop: "6px" }}>
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" style={{ color: "#D0BDAC", marginTop: "6px" }}>
                   <path d="M12 2L14 8L20 8L15 12L17 18L12 15L7 18L9 12L4 8L10 8L12 2Z" fill="currentColor" />
                 </svg>
               </div>
@@ -112,22 +114,22 @@ const IntuitiveCoaching = () => {
       </section>
 
       {/* Main Hero Section */}
-      <section className="relative w-full min-h-screen overflow-hidden" style={{ backgroundColor: "#F5F0E8" }}>
+      <section className="relative w-full min-h-screen overflow-hidden" style={{ backgroundColor: "#FDFCFA" }}>
         {/* Textured Background with Organic Shapes */}
         <div
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0 opacity-20"
           style={{
             backgroundImage: `
-              radial-gradient(ellipse at 20% 30%, rgba(200, 180, 160, 0.3) 0%, transparent 50%),
-              radial-gradient(ellipse at 80% 70%, rgba(190, 170, 150, 0.2) 0%, transparent 50%),
-              radial-gradient(ellipse at 50% 50%, rgba(210, 190, 170, 0.25) 0%, transparent 60%)
+              radial-gradient(ellipse at 20% 30%, rgba(133, 102, 84, 0.15) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 70%, rgba(133, 102, 84, 0.1) 0%, transparent 50%),
+              radial-gradient(ellipse at 50% 50%, rgba(133, 102, 84, 0.12) 0%, transparent 60%)
             `,
           }}
         ></div>
 
         {/* Blurred Palm Leaves on Right */}
         <div
-          className="absolute right-0 top-0 w-1/3 h-full opacity-20"
+          className="absolute right-0 top-0 w-1/3 h-full opacity-15"
           style={{
             backgroundImage: `url(${servicesPhoto2})`,
             backgroundSize: "cover",
@@ -143,28 +145,24 @@ const IntuitiveCoaching = () => {
             <div className="relative z-40 mt-8 md:mt-12 ml-12 md:ml-20 lg:ml-32 text-box-right-align">
               <div className="bg-white p-4 md:p-6 lg:p-8 shadow-lg text-box-overlap text-center">
                 <p
-                  className="text-2xl md:text-3xl lg:text-4xl font-serif italic text-[#3A1D0F] mb-2 md:mb-3"
+                  className="text-2xl md:text-3xl lg:text-4xl font-serif italic text-[#856654] mb-2 md:mb-3"
                   style={{ fontFamily: 'cursive' }}
                 >
                   Introducing
                 </p>
                 <div className="space-y-0.5 md:space-y-1 mb-4 md:mb-6">
-                  <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-sans font-bold uppercase tracking-wide text-[#3A1D0F] leading-none">
+                  <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-sans font-bold uppercase tracking-wide text-[#856654] leading-none">
                     LIFE COACHING
                   </h1>
-                  <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-sans font-bold uppercase tracking-wide text-[#3A1D0F] leading-none">
+                  <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-sans font-bold uppercase tracking-wide text-[#856654] leading-none">
                     FOR EMPOWERED
                   </h1>
-                  <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-sans font-bold uppercase tracking-wide text-[#3A1D0F] leading-none">
+                  <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-sans font-bold uppercase tracking-wide text-[#856654] leading-none">
                     WOMEN
                   </h1>
                 </div>
                 <div className="flex justify-center">
-                  <button
-                    className="px-5 md:px-6 py-1.5 md:py-2 bg-[#C89F85] text-white font-sans font-semibold uppercase tracking-wider text-sm md:text-base rounded-md hover:bg-[#B8957A] transition-colors shadow-md"
-                  >
-                    FIND OUT MORE
-                  </button>
+                  <ContactButton serviceName="Intuitive Coaching" />
                 </div>
               </div>
             </div>
@@ -329,6 +327,9 @@ const IntuitiveCoaching = () => {
           display: block;
         }
       `}</style>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

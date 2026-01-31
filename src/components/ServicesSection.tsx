@@ -8,6 +8,7 @@ import crystals from "@/assets/crystals.jpg"
 import intuitivecoaching from "@/assets/coaching.jpg"
 import starsTop from "@/assets/servicestarstop.png"
 import starsBottom from "@/assets/servicesstarsbottom.png"
+import { openWhatsApp } from "@/utils/whatsapp"
 import {
   Carousel,
   CarouselContent,
@@ -136,8 +137,7 @@ const ServicesSection = () => {
               return (
                 <CarouselItem key={index} className="pl-8 basis-full md:basis-1/2 lg:basis-1/3">
                   <div
-                    className="flex flex-col items-center cursor-pointer transition-transform duration-300 hover:scale-105"
-                    onClick={() => navigate(service.route)}
+                    className="flex flex-col items-center transition-transform duration-300 hover:scale-105"
                   >
                     <div
                       className="absolute top-[65px] w-[80%] max-w-[260px] z-10 "
@@ -162,8 +162,9 @@ const ServicesSection = () => {
 
                       {/* Card with Colored Frame */}
                       <div
-                        className="w-full p-5 sm:p-6 md:p-7 shadow-xl relative"
+                        className="w-full p-5 sm:p-6 md:p-7 shadow-xl relative cursor-pointer"
                         style={{ backgroundColor: bgColor }}
+                        onClick={() => navigate(service.route)}
                       >
                         {/* Image without border */}
                         <div className="overflow-hidden aspect-[4/5]">
@@ -173,6 +174,22 @@ const ServicesSection = () => {
                             className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                           />
                         </div>
+
+                        {/* Contact Me Button */}
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation(); // Prevent card navigation
+                            openWhatsApp(service.name);
+                          }}
+                          className="w-full mt-4 py-3 px-4 text-white font-semibold text-sm sm:text-base rounded transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                          style={{
+                            background: 'linear-gradient(145deg, #F5E3B8 0%, #C8A25C 25%, #A88042 50%, #7A4B13 75%, #673500 100%)',
+                            boxShadow: '0 4px 12px rgba(142, 106, 72, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
+                            textShadow: '0 2px 4px rgba(0,0,0,0.3)'
+                          }}
+                        >
+                          Contact Me on WhatsApp
+                        </button>
 
                         {/* Decorative dots at bottom */}
                         <div className="absolute bottom-3 left-4 flex gap-2">

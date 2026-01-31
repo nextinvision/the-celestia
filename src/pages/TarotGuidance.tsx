@@ -1,6 +1,8 @@
 import { useEffect, useMemo } from "react";
 import Navigation from "@/components/layout/Navigation";
+import Footer from "@/components/layout/Footer";
 import tarotCards from "@/assets/tarot-cards.jpg";
+import ContactButton from "@/components/ContactButton";
 
 // Seeded random function for consistent star positions
 const seededRandom = (seed: number) => {
@@ -36,28 +38,29 @@ const TarotGuidance = () => {
 
   return (
     <div
-      className="min-h-screen w-full text-white"
+      className="min-h-screen w-full"
       style={{
-        backgroundColor: "#0A0B2E",
+        backgroundColor: "#FDFCFA",
+        color: "#856654"
       }}
     >
-      <Navigation />
+      <Navigation isNotificationVisible={false} />
 
       <main className="max-w-5xl mx-auto px-4 sm:px-6 md:px-10 lg:px-16 pt-12 pb-12 sm:pt-16 sm:pb-16 md:pt-20 md:pb-28 relative">
         {/* Heading and copy */}
         <section className="max-w-xl mx-auto md:mx-0">
-          <p className="tracking-[0.25em] sm:tracking-[0.28em] text-[10px] sm:text-[11px] md:text-xs text-[#E2C9FF]/80 uppercase mb-2 sm:mb-3">
+          <p className="tracking-[0.25em] sm:tracking-[0.28em] text-[10px] sm:text-[11px] md:text-xs text-[#856654]/70 uppercase mb-2 sm:mb-3">
             THIS YEAR&apos;S
           </p>
-          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-[0.05em] sm:tracking-[0.06em] text-[#F4E9FF] mb-3 sm:mb-4">
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-[0.05em] sm:tracking-[0.06em] text-[#856654] mb-3 sm:mb-4">
             ASTROLOGY
           </h1>
-          <p className="text-xs sm:text-sm md:text-[15px] lg:text-base leading-relaxed text-[#D5CCE6] max-w-md mb-4 sm:mb-6">
+          <p className="text-xs sm:text-sm md:text-[15px] lg:text-base leading-relaxed text-[#856654]/80 max-w-md mb-4 sm:mb-6">
             Step into a luminous year of expansion, alignment, and deeper
             self-trust. Your tarot and astrological blueprint reveal the
             portals, pauses, and possibilities that shape your path ahead.
           </p>
-          <p className="text-[10px] sm:text-xs md:text-sm text-[#B8A9D9] italic">
+          <p className="text-[10px] sm:text-xs md:text-sm text-[#856654]/70 italic">
             Crafted for seekers ready to move with the cosmos, not against it.
           </p>
         </section>
@@ -66,15 +69,15 @@ const TarotGuidance = () => {
         <section className="mt-12 sm:mt-16 md:mt-24 relative h-[200px] sm:h-[240px] md:h-[280px] lg:h-[320px]">
           {/* Soft glow behind cards */}
           <div
-            className="absolute inset-x-6 sm:inset-x-10 bottom-4 sm:bottom-6 mx-auto h-40 sm:h-44 blur-3xl opacity-70"
+            className="absolute inset-x-6 sm:inset-x-10 bottom-4 sm:bottom-6 mx-auto h-40 sm:h-44 blur-3xl opacity-30"
             style={{
               background:
-                "radial-gradient(circle at center, rgba(250,243,220,0.45) 0%, rgba(7,6,30,0.0) 70%)",
+                "radial-gradient(circle at center, rgba(133, 102, 84, 0.3) 0%, rgba(253, 252, 250, 0.0) 70%)",
             }}
           />
 
           {/* Subtle stars */}
-          <div className="absolute -top-4 right-10 flex gap-1 text-xs text-[#EBD9FF]/80 tracking-[0.3em] uppercase">
+          <div className="absolute -top-4 right-10 flex gap-1 text-xs text-[#856654]/60 tracking-[0.3em] uppercase">
             <span>✶</span>
             <span>✶</span>
             <span>✶</span>
@@ -154,25 +157,25 @@ const TarotGuidance = () => {
       </main>
 
       {/* HOROSCOPE Section */}
-      <section className="w-full pt-6 pb-12 sm:pt-8 sm:pb-16 md:pt-10 md:pb-24 relative">
+      <section className="w-full pt-6 pb-12 sm:pt-8 sm:pb-16 md:pt-10 md:pb-24 relative" style={{ backgroundColor: "#856654" }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-10 lg:px-16 relative">
           {/* Top Corner Decorations */}
           <div className="absolute top-4 left-4 sm:top-6 sm:left-6 md:top-8 md:left-8 flex flex-col items-start gap-2 sm:gap-3">
-            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#FFD700]" />
-            <div className="text-[#FFD700] text-sm sm:text-lg">✶</div>
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#D0BDAC]" />
+            <div className="text-[#D0BDAC] text-sm sm:text-lg">✶</div>
           </div>
           <div className="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 flex flex-col items-end gap-2 sm:gap-3">
-            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#FFD700]" />
-            <div className="text-[#FFD700] text-sm sm:text-lg">✶</div>
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#D0BDAC]" />
+            <div className="text-[#D0BDAC] text-sm sm:text-lg">✶</div>
           </div>
 
           {/* Header Section */}
           <div className="text-center pt-8 pb-6 sm:pt-12 sm:pb-8 md:pt-16 md:pb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-sans font-bold uppercase tracking-[0.08em] sm:tracking-[0.1em] text-[#FFD700] mb-2 sm:mb-3">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-sans font-bold uppercase tracking-[0.08em] sm:tracking-[0.1em] text-[#FDFCFA] mb-2 sm:mb-3">
               HOROSCOPE
             </h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#FFD700] font-sans tracking-wide">
-              Lorem ipsum dolor sit amet
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#FDFCFA]/90 font-sans tracking-wide">
+              Discover your cosmic path
             </p>
           </div>
 
@@ -181,7 +184,7 @@ const TarotGuidance = () => {
             {/* Container for circle and triangle */}
             <div className="relative w-[90vw] sm:w-[85vw] max-w-[400px] sm:max-w-[500px] md:max-w-[600px] aspect-square">
               {/* Large Circle Outline */}
-              <div className="absolute inset-0 border border-[#FFD700] rounded-full" style={{ borderWidth: "1px" }} />
+              <div className="absolute inset-0 border border-[#D0BDAC] rounded-full" style={{ borderWidth: "1px" }} />
 
               {/* Large Triangle Overlay - Equilateral triangle with vertices touching circle */}
               <svg
@@ -193,7 +196,7 @@ const TarotGuidance = () => {
                 <polygon
                   points="50,8 11,88 89,88"
                   fill="none"
-                  stroke="#FFD700"
+                  stroke="#D0BDAC"
                   strokeWidth="0.4"
                   vectorEffect="non-scaling-stroke"
                 />
@@ -201,32 +204,32 @@ const TarotGuidance = () => {
 
               {/* Starry Background Circle */}
               <div className="absolute inset-[2.5%] rounded-full overflow-hidden">
-                <div className="w-full h-full relative rounded-full" style={{ backgroundColor: "#0A0B2E" }}>
-                  {/* White Stars */}
+                <div className="w-full h-full relative rounded-full" style={{ backgroundColor: "#FDFCFA" }}>
+                  {/* Brown Stars */}
                   {whiteStars.map((star, i) => (
                     <div
                       key={`white-${i}`}
-                      className="absolute rounded-full bg-white"
+                      className="absolute rounded-full bg-[#856654]"
                       style={{
                         width: `${star.width}px`,
                         height: `${star.height}px`,
                         left: `${star.left}%`,
                         top: `${star.top}%`,
-                        opacity: star.opacity,
+                        opacity: star.opacity * 0.3,
                       }}
                     />
                   ))}
-                  {/* Yellow Stars */}
+                  {/* Golden Stars */}
                   {yellowStars.map((star, i) => (
                     <div
                       key={`yellow-${i}`}
-                      className="absolute rounded-full bg-[#FFD700]"
+                      className="absolute rounded-full bg-[#D0BDAC]"
                       style={{
                         width: `${star.width}px`,
                         height: `${star.height}px`,
                         left: `${star.left}%`,
                         top: `${star.top}%`,
-                        opacity: star.opacity,
+                        opacity: star.opacity * 0.5,
                       }}
                     />
                   ))}
@@ -236,23 +239,23 @@ const TarotGuidance = () => {
               {/* Full Moon */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-[45%] aspect-square">
                 <div className="w-full h-full rounded-full relative overflow-hidden" style={{
-                  background: "radial-gradient(circle at 30% 30%, #FFF8E1 0%, #F5E6B3 25%, #E8D5A0 50%, #D4C190 75%, #C4B080 100%)",
-                  boxShadow: "0 0 60px rgba(255, 215, 0, 0.4), inset -20px -20px 40px rgba(0, 0, 0, 0.2), inset 10px 10px 30px rgba(255, 255, 255, 0.3)",
+                  background: "radial-gradient(circle at 30% 30%, #F5E3B8 0%, #C8A25C 25%, #A88042 50%, #8B6B3D 75%, #7A5A30 100%)",
+                  boxShadow: "0 0 60px rgba(200, 162, 92, 0.4), inset -20px -20px 40px rgba(0, 0, 0, 0.2), inset 10px 10px 30px rgba(255, 255, 255, 0.3)",
                 }}>
                   {/* Moon Craters */}
-                  <div className="absolute top-[15%] left-[25%] w-[8%] h-[8%] rounded-full bg-[#C4B080]/60 blur-[2px]" />
-                  <div className="absolute top-[30%] right-[20%] w-[6%] h-[6%] rounded-full bg-[#D4C190]/50 blur-[1px]" />
-                  <div className="absolute bottom-[25%] left-[20%] w-[10%] h-[10%] rounded-full bg-[#C4B080]/70 blur-[2px]" />
-                  <div className="absolute bottom-[35%] right-[30%] w-[7%] h-[7%] rounded-full bg-[#D4C190]/60 blur-[1px]" />
-                  <div className="absolute top-[45%] left-[45%] w-[5%] h-[5%] rounded-full bg-[#C4B080]/50 blur-[1px]" />
-                  <div className="absolute top-[60%] right-[15%] w-[9%] h-[9%] rounded-full bg-[#D4C190]/65 blur-[2px]" />
-                  <div className="absolute bottom-[15%] right-[25%] w-[6%] h-[6%] rounded-full bg-[#C4B080]/55 blur-[1px]" />
+                  <div className="absolute top-[15%] left-[25%] w-[8%] h-[8%] rounded-full bg-[#7A5A30]/60 blur-[2px]" />
+                  <div className="absolute top-[30%] right-[20%] w-[6%] h-[6%] rounded-full bg-[#8B6B3D]/50 blur-[1px]" />
+                  <div className="absolute bottom-[25%] left-[20%] w-[10%] h-[10%] rounded-full bg-[#7A5A30]/70 blur-[2px]" />
+                  <div className="absolute bottom-[35%] right-[30%] w-[7%] h-[7%] rounded-full bg-[#8B6B3D]/60 blur-[1px]" />
+                  <div className="absolute top-[45%] left-[45%] w-[5%] h-[5%] rounded-full bg-[#7A5A30]/50 blur-[1px]" />
+                  <div className="absolute top-[60%] right-[15%] w-[9%] h-[9%] rounded-full bg-[#8B6B3D]/65 blur-[2px]" />
+                  <div className="absolute bottom-[15%] right-[25%] w-[6%] h-[6%] rounded-full bg-[#7A5A30]/55 blur-[1px]" />
                 </div>
               </div>
 
               {/* Small Crescent Moon (top-right) */}
               <div className="absolute top-[5%] right-[5%] w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10">
-                <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-[#FFD700]">
+                <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-[#D0BDAC]">
                   <path
                     d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-1.57.45-3.03 1.23-4.26C7.5 9.5 9.5 11.5 12 11.5s4.5-2 6.77-3.76C19.55 8.97 20 10.43 20 12c0 4.41-3.59 8-8 8z"
                     fill="currentColor"
@@ -262,7 +265,7 @@ const TarotGuidance = () => {
               </div>
 
               {/* Small Star (bottom-left) */}
-              <div className="absolute bottom-[5%] left-[5%] text-[#FFD700] text-lg sm:text-xl md:text-2xl">
+              <div className="absolute bottom-[5%] left-[5%] text-[#D0BDAC] text-lg sm:text-xl md:text-2xl">
                 ✶
               </div>
             </div>
@@ -270,16 +273,19 @@ const TarotGuidance = () => {
 
           {/* Footer Section */}
           <div className="text-center pt-6 pb-8 sm:pt-8 sm:pb-12 md:pt-12 md:pb-16">
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#FFD700] font-sans max-w-2xl mx-auto leading-relaxed px-4">
-              Lorem ipsum dolor sit amet,<br />
-              et mediocrem intellegat,<br />
-              ea natum omnium disseret.
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#FDFCFA]/90 font-sans max-w-2xl mx-auto leading-relaxed px-4 mb-6">
+              Align with the stars and discover your path<br />
+              through ancient wisdom and cosmic guidance<br />
+              tailored to your unique journey.
             </p>
+            <div className="flex justify-center">
+              <ContactButton serviceName="Tarot Guidance" />
+            </div>
           </div>
 
           {/* Bottom Corner Decorations - Ornate Starburst */}
           <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 md:bottom-8 md:left-8 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12">
-            <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-[#FFD700]">
+            <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-[#D0BDAC]">
               <path
                 d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z"
                 fill="currentColor"
@@ -294,7 +300,7 @@ const TarotGuidance = () => {
             </svg>
           </div>
           <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12">
-            <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-[#FFD700]">
+            <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-[#D0BDAC]">
               <path
                 d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z"
                 fill="currentColor"
@@ -310,6 +316,9 @@ const TarotGuidance = () => {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
